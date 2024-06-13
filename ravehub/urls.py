@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from event.views import my_event
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('event/', my_event, name='event'),
 ]
