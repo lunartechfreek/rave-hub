@@ -34,7 +34,7 @@ class Festival(models.Model):
     artists = models.ManyToManyField(Artist, related_name="festivals")
     website = models.URLField(max_length=256, blank=True, null=True)
     date = models.DateField(null=False, blank=False)
-    time = models.TimeField(choices=TIME_SLOTS, null=False, blank=False)
+    time = models.CharField(choices=TIME_SLOTS, null=False, blank=False)
     latitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
     longitude = models.DecimalField(
