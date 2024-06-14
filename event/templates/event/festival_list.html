@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>Upcoming Events</h1>
+    {% for festival in object_list %}
+    <h2>{{festival.name}}</h2>
+    <p>Artists:</p>
+    <ul>
+        {% for artist in festival.artists.all %}
+        <li>{{ artist.name }}</li>
+        {% endfor %}
+    </ul>
+    <p>{{festival.date}}</p>
+    <p>{{festival.time}}</p>
+    {% endfor %}
+</body>
+
+</html>

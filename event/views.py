@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Festival
 
-
-# Create your views here.
-def my_event(request):
-    return HttpResponse("Hello, World!")
+class FestivalList(generic.ListView):
+    model = Festival
