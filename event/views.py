@@ -8,4 +8,4 @@ class FestivalList(generic.ListView):
 
     def get_queryset(self):
         # Ensures festivals that are in the past are not displayed
-        return Festival.objects.filter(date__gte=timezone.now().date())
+        return Festival.objects.filter(approved=True, date__gte=timezone.now().date())
