@@ -35,6 +35,7 @@ class Festival(models.Model):
     website = models.URLField(max_length=256, blank=True, null=True)
     date = models.DateField(null=False, blank=False)
     time = models.CharField(choices=TIME_SLOTS, null=False, blank=False)
+    approved = models.BooleanField(default=False)
     latitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
     longitude = models.DecimalField(
