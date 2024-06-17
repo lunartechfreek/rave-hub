@@ -43,3 +43,8 @@ body {
 .page-link {
     color: blue;
 }
+
+.btn-signup {
+    background-color: black;
+    color: #fff;
+}
