@@ -4,7 +4,8 @@ from .models import Festival
 
 class FestivalList(generic.ListView):
     model = Festival
-    template_name = 'festival_list.html'
+    template_name = "event/index.html"
+    paginate_by = 6
 
     def get_queryset(self):
         # Ensures festivals that are in the past are not displayed
