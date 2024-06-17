@@ -1,0 +1,45 @@
+body {
+    background-color: #fafafa;
+}
+
+.dark-bg {
+    background-color: black;
+}
+
+.main-bg {
+    background-color: white;
+}
+
+/* Navbar */
+.brand {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.active {
+    font-weight: 500;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.festival-image {
+    position: absolute;
+}
+
+.festival-link {
+    text-decoration: none;
+    color: black;
+}
+
+.festival-link:hover,
+.page-link {
+    color: blue;
+}
