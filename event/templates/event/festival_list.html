@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <h1>Upcoming Festivals</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-4">
+            {% for festival in festivals %}
+            <h3>
+                <a href="{% url 'festival_detail' festival.id %}">{{ festival.name }}</a> - {{ festival.date }}
+            </h3>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
