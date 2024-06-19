@@ -13,9 +13,7 @@ class FestivalList(generic.ListView):
         return Festival.objects.filter(approved=True, date__gte=timezone.now().date()).order_by('date')
 
 def festival_list(request):
-    print("festival_list view called")
     festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
-    print(festivals)
     return render(request, 'event/festival_list.html', {'festivals': festivals})
 
 def festival_detail(request, id):
