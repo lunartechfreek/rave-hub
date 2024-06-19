@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
         <!-- Events Column -->
@@ -17,7 +17,7 @@
                                 <div class="festival-image">
                                 </div>
                             </div>
-                            <a href="#" class="festival-link">
+                            <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
                                 <h2 class="card-title">{{ festival.name }}</h2>
                             </a>
 
