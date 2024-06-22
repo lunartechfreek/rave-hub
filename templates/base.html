@@ -5,6 +5,7 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'festival_list' as festival_list_url %}
+{% url 'add_festival' as add_festival_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +57,10 @@
                             href="{% url 'festival_list' %}">Festivals</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == add_festival_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'add_festival' %}">Add Festival</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
