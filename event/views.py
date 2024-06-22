@@ -36,6 +36,7 @@ def add_festival(request):
             festival.event_manager = request.user
             festival.approved = False
             festival.save()
+            form.save_m2m()
             messages.add_message(
                 request, messages.SUCCESS,
                 'Event submitted and awaiting approval'
