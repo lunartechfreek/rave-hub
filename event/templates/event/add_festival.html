@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2>Add Festival</h2>
-            <form id="add-festival-form" method="post">
+            <form id="add-festival-form" method="post" action="{% url 'add_festival' %}" novalidate>
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -14,4 +14,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('add-festival-form').addEventListener('submit', function(event) {
+        const urlField = document.querySelector('input[name="website"]');
+        if (urlField) {
+            const url = urlField.value;
+            const urlPattern = /^(https?:\/\/)?([a-z\d-]+\.)+[a-z]{2,6}(:\d+)?(\/[^\s]*)?$/i;
+            if (!urlPattern.test(url)) {
+                alert('Please enter a valid URL.');
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    });
+</script>
 {% endblock %}

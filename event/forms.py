@@ -18,3 +18,9 @@ class FestivalForm(forms.ModelForm):
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
         }
+
+    def clean_website(self):
+        website = self.cleaned_data.get('website')
+        if website and not website.startswith(('http://', 'https://')):
+            website = 'http://' + website
+        return website
