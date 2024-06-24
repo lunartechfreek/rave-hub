@@ -48,3 +48,21 @@ body {
     background-color: black;
     color: #fff;
 }
+
+.artist-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.artist-checkboxes .checkbox {
+    width: 50%;
+}
+
+.scrollable-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
