@@ -8,7 +8,45 @@
             <h2>Add Festival</h2>
             <form id="add-festival-form" method="post" action="{% url 'add_festival' %}" novalidate>
                 {% csrf_token %}
-                {{ form|crispy }}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                
+                <div class="form-group artist-checkboxes">
+                    {{ form.artists.label_tag }}
+                    <div class="scrollable-checkboxes">
+                        {% for checkbox in form.artists %}
+                            <div class="checkbox">{{ checkbox }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    {{ form.website.label_tag }}
+                    {{ form.website }}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.date.label_tag }}
+                    {{ form.date }}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.time.label_tag }}
+                    {{ form.time }}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.latitude.label_tag }}
+                    {{ form.latitude }}
+                </div>
+        
+                <div class="form-group">
+                    {{ form.longitude.label_tag }}
+                    {{ form.longitude }}
+                </div>
+        
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
@@ -16,7 +54,7 @@
 </div>
 
 <script>
-    document.getElementById('add-festival-form').addEventListener('submit', function(event) {
+    document.getElementById('add-festival-form').addEventListener('submit', function (event) {
         const urlField = document.querySelector('input[name="website"]');
         if (urlField) {
             const url = urlField.value;
