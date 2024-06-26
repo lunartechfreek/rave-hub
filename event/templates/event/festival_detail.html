@@ -16,9 +16,28 @@
             <p>Date: {{ festival.date }}</p>
             <p>Time: {{ festival.time }}</p>
             <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
-            <p>Location: {{ festival.latitude }}, {{ festival.longitude }}</p>
+            <!-- Leaflet Map to select festival location -->
+             <div id="map"></div>
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+
+{% block js %}
+<script>
+    // Initialize the map
+    let map = L.map('map').setView([`{{ festival.latitude }}`, `{{ festival.longitude }}`], 13);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add a marker at the festival location
+    L.marker([`{{ festival.latitude }}`, `{{ festival.longitude }}`]).addTo(map)
+        .bindPopup('{{ festival.name }}')
+        .openPopup();
+</script>
 {% endblock %}
