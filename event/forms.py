@@ -29,5 +29,5 @@ class FestivalForm(forms.ModelForm):
     def clean_website(self):
         website = self.cleaned_data.get('website')
         if website and not website.startswith(('http://', 'https://')):
-            website = 'http://' + website
+            website = 'https://' + website
         return website
