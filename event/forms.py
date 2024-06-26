@@ -24,6 +24,8 @@ class FestivalForm(forms.ModelForm):
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
             'name': forms.TextInput(attrs={'autocomplete': 'on'}),
+            'latitude': forms.HiddenInput(),
+            'longitude': forms.HiddenInput(),
         }
 
     def clean_website(self):
