@@ -66,3 +66,7 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
 }
+
+#map {
+    height: 25vh;
+}
