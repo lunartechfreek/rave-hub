@@ -17,7 +17,8 @@ class FestivalForm(forms.ModelForm):
             'date', 
             'time', 
             'latitude', 
-            'longitude'
+            'longitude',
+            'location_name'
             ]
         
         

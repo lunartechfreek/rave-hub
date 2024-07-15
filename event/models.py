@@ -40,6 +40,7 @@ class Festival(models.Model):
         max_digits=9, decimal_places=6, null=False, blank=False)
     longitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
+    location_name = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
         ordering = ['date']
