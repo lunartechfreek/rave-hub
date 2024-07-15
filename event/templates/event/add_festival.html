@@ -42,15 +42,9 @@
                     {{ form.location_name }}
                 </div>
 
-                <div class="form-group">
-                    {{ form.latitude.label_tag }}
-                    {{ form.latitude }}
-                </div>
-
-                <div class="form-group">
-                    {{ form.longitude.label_tag }}
-                    {{ form.longitude }}
-                </div>
+                {{ form.latitude }}
+                {{ form.longitude }}
+                
                 <!-- Leaflet Map to select festival location -->
                 <div id="map"></div>
 
