@@ -20,8 +20,11 @@
 
             <!-- Leaflet Map to select festival location -->
             <div id="map"></div>
-            
-            <a href="{% url 'edit_festival' festival.id %}">Edit</a>
+
+            <!-- <a href="{% url 'edit_festival' festival.id %}">Edit</a> -->
+            {% if user == festival.event_manager %}
+            <a href="{% url 'edit_festival' festival.id %}" class="btn btn-dark">Edit</a>
+            {% endif %}
         </div>
     </div>
 </div>
