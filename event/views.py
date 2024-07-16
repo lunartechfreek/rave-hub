@@ -45,3 +45,22 @@ def add_festival(request):
     else:
         form = FestivalForm()
     return render(request, 'event/add_festival.html', {'form': form})
+
+
+@login_required
+def edit_festival(request, id):
+    festival = get_object_or_404(Festival, id=id, event_manager=request.user)
+    
+    if request.method == 'POST':
+        form = FestivalForm(request.POST, instance=festival)
+        if form.is_valid():
+            festival = form.save(commit=False)
+            festival.approved = False
+            festival.save()
+            form.save_m2m()
+            messages.success(request, 'Festival updated successfully and is awaiting approval.')
+            return redirect('festival_detail', id=festival.id)
+    else:
+        form = FestivalForm(instance=festival)
+    
+    return render(request, 'event/edit_festival.html', {'form': form, 'festival': festival})

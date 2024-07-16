@@ -8,6 +8,7 @@ class FestivalForm(forms.ModelForm):
         required = True,
         )
 
+
     class Meta:
         model = Festival
         fields = [
@@ -28,9 +29,13 @@ class FestivalForm(forms.ModelForm):
             'latitude': forms.HiddenInput(),
             'longitude': forms.HiddenInput(),
         }
+        
 
     def clean_website(self):
-        website = self.cleaned_data.get('website')
-        if website and not website.startswith(('http://', 'https://')):
-            website = 'https://' + website
+        website = self.cleaned_data.get('website')        
+        if website:
+            if website.startswith('http://'):
+                website = 'https://' + website[7:]
+            elif not website.startswith('https://'):
+                website = 'https://' + website
         return website

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>edit Festival</h2>
+            <form id="edit-festival-form" method="post" action="{% url 'edit_festival' festival.id %}" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+
+                <div class="form-group artist-checkboxes">
+                    <p>Artists:</p>
+                    <div class="scrollable-checkboxes">
+                        {% for artist in form.artists %}
+                        <div class="checkbox">{{ artist }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form.website.label_tag }}
+                    {{ form.website }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.date.label_tag }}
+                    {{ form.date }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.time.label_tag }}
+                    {{ form.time }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.location_name.label_tag }}
+                    {{ form.location_name }}
+                </div>
+
+                {{ form.latitude }}
+                {{ form.longitude }}
+                
+                <!-- Leaflet Map to select festival location -->
+                <div id="map"></div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    document.getElementById('edit-festival-form').addEventListener('submit', function (event) {
+        const urlField = document.querySelector('input[name="website"]');
+        if (urlField) {
+            const url = urlField.value;
+            const urlPattern = /^(https?:\/\/)?([a-z\d-]+\.)+[a-z]{2,6}(:\d+)?(\/[^\s]*)?$/i;
+            if (!urlPattern.test(url)) {
+                alert('Please enter a valid URL.');
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    });
+
+    // basic leaflet map of the UK
+    let origLat = document.getElementById("id_latitude").value;
+    let origLng = document.getElementById("id_longitude").value;
+    if (!origLat || !origLng) {
+        origLat = 53.37810;
+        origLng = -1.46740;
+    }
+    let map = L.map("map", {
+        // stops users from loading infinite tiles outside of the UK
+        maxBounds: [[49.56099, -9.119201], [61.17188, 2.79249]],
+        maxBoundsViscosity: 0.5,
+    }).setView([origLat, origLng], 6);
+    let mapTileLayers = L.tileLayer(`http://{s}.tile.osm.org/{z}/{x}/{y}.png`, {
+        attribution: "Map data &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener'>OpenStreetMap</a> contributors",
+        maxZoom: 18,
+        minZoom: 5,
+    }).addTo(map);
+
+    let marker = L.marker([origLat, origLng], {draggable: true}).addTo(map);
+    // prefill lat/lng values on map-click or marker-drag
+    marker.on("dragend", function(e) {
+        updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
+    });
+    map.on("click", function(e) {
+        marker.setLatLng(e.latlng);
+        updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
+    });
+
+    function updateCoords(lat, lng, zoom) {
+        document.getElementById("id_latitude").value = marker.getLatLng().lat.toFixed(5);
+        document.getElementById("id_longitude").value = marker.getLatLng().lng.toFixed(5);
+        zoom = zoom < 10 ? 10 : zoom;
+        map.flyTo([lat, lng], zoom);
+    }
+</script>
+{% endblock %}
