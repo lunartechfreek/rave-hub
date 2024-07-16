@@ -17,8 +17,11 @@
             <p>Time: {{ festival.time }}</p>
             <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
             <p>Location: {{ festival.location_name }}</p>
+
             <!-- Leaflet Map to select festival location -->
-             <div id="map"></div>
+            <div id="map"></div>
+            
+            <a href="{% url 'edit_festival' festival.id %}">Edit</a>
         </div>
     </div>
 </div>
