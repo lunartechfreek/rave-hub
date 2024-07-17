@@ -50,6 +50,10 @@ def add_festival(request):
 @login_required
 def edit_festival(request, id):
     festival = get_object_or_404(Festival, id=id, event_manager=request.user)
+
+    if request.user != festival.event_manager:
+        messages.error(request, 'You do not have permission to edit this festival.')
+        return redirect('festival_detail', id=festival.id)
     
     if request.method == 'POST':
         form = FestivalForm(request.POST, instance=festival)
