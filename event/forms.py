@@ -6,8 +6,7 @@ class FestivalForm(forms.ModelForm):
         queryset = Artist.objects.order_by('name'),
         widget = forms.CheckboxSelectMultiple(attrs={"class": "artist-checkboxes"}),
         required = True,
-        )
-
+    )
 
     class Meta:
         model = Festival
@@ -17,9 +16,9 @@ class FestivalForm(forms.ModelForm):
             'website', 
             'date', 
             'time', 
+            'location_name',
             'latitude', 
-            'longitude',
-            'location_name'
+            'longitude'     
             ]
         
         
