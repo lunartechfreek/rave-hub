@@ -68,3 +68,31 @@ def edit_festival(request, id):
         form = FestivalForm(instance=festival)
     
     return render(request, 'event/edit_festival.html', {'form': form, 'festival': festival})
+
+
+# @login_required
+# def delete_festival(request, id):
+#     festival = get_object_or_404(Festival, id=id)
+
+#     if request.user == festival.event_manager:
+#         festival.delete()
+#         messages.success(request, 'Festival deleted successfully.')
+#         return redirect('festival_list')
+#     else:
+#         messages.error(request, 'You do not have permission to delete this festival.')
+#         return redirect('festival_detail', id=festival.id)
+
+@login_required
+def delete_festival(request, id):
+    festival = get_object_or_404(Festival, id=id)
+
+    if request.user != festival.event_manager:
+        messages.error(request, 'You do not have permission to delete this festival.')
+        return redirect('festival_detail', id=festival.id)
+
+    if request.method == 'POST':
+        festival.delete()
+        messages.success(request, 'Festival deleted successfully.')
+        return redirect('festival_list')
+
+    return redirect('festival_detail', id=festival.id)
