@@ -11,8 +11,16 @@
     <div class="row">
         <div class="col-12 mt-4">
             <p>Event Manager: {{ festival.event_manager }}</p>
-            <p>Artists: {% for artist in festival.artists.all %}{{ artist.name }}{% if not forloop.last %},
-                {% endif %}{% endfor %}</p>
+            <p>Artists: 
+                {% for artist in festival.artists.all %}
+                {{ artist.name }}{% if not forloop.last %},
+                {% endif %}
+                {% endfor %}</p>
+            <p>Genres:
+                {% for genre in genres %}
+                {{ genre }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
             <p>Date: {{ festival.date }}</p>
             <p>Time: {{ festival.time }}</p>
             <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
@@ -51,7 +59,7 @@
         </div>
     </div>
 </div>
-  
+
 
 {% endblock %}
 
