@@ -8,6 +8,12 @@
             <h1>Upcoming Festivals</h1>
         </div>
     </div>
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'festival_search' %}">
+        <input type="text" name="q" placeholder="Search festivals, genres, artists..." value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
+    
     <div class="row">
         <div class="col-12 mt-4">
             {% for festival in festivals %}

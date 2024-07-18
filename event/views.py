@@ -1,6 +1,7 @@
 from django.views import generic
 from django.contrib import messages
 from django.utils import timezone
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Festival
@@ -86,3 +87,17 @@ def delete_festival(request, id):
         return redirect('festival_list')
 
     return redirect('festival_detail', id=festival.id)
+
+
+def festival_search(request):
+    query = request.GET.get('q')
+    festivals = Festival.objects.all()
+
+    if query:
+        festivals = festivals.filter(
+            Q(name__icontains=query) |
+            Q(artists__name__icontains=query) |
+            Q(artists__genre__name__icontains=query)
+        ).distinct()
+
+    return render(request, 'event/festival_search.html', {'festivals': festivals, 'query': query})

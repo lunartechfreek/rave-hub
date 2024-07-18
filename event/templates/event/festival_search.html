@@ -1,0 +1,22 @@
+<!-- festival_search_results.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Search Results for "{{ query }}"</h2>
+    {% if festivals %}
+        {% for festival in festivals %}
+        <div>
+            <h3>
+                <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
+            </h3>
+            <p>Genres: {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+            <p>Artists: {% for artist in festival.artists.all %}{{ artist.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+            <p>Date: {{ festival.date }}</p>
+        </div>
+        {% endfor %}       
+    {% else %}
+        <p>No festivals found.</p>
+    {% endif %}
+</div>
+{% endblock %}
