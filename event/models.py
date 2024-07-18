@@ -58,4 +58,10 @@ class Festival(models.Model):
         self.clean()
         super().save(*args, **kwargs)
 
+    def get_genres(self):
+        genres = set()
+        for artist in self.artists.all():
+            genres.add(artist.genre.name)
+        return genres
+
 
