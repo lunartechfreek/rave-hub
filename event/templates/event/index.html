@@ -5,13 +5,18 @@
 <!-- index.html content starts here -->
 <div class="container">
     <div class="row">
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'festival_search' %}">
+            <input type="text" name="q" placeholder="Search festivals, genres, artists..." value="{{ request.GET.q }}">
+            <button type="submit">Search</button>
+        </form>
 
         <!-- Events Column -->
-        <div class="col-12 mt-2">
+        <div class="col-10 mt-2 offset-1">
             <div class="row">
                 {% for festival in festival_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-3">
+                    <div class="card mb-3">
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="festival-image">
@@ -31,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
                 {% endif %}
