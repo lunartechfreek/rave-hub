@@ -10,9 +10,23 @@
             <h3>
                 <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
             </h3>
-            <p>Genres: {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-            <p>Artists: {% for artist in festival.artists.all %}{{ artist.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
             <p>Date: {{ festival.date }}</p>
+            <p>Genres: {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+            <!-- <p>Artists: {% for artist in festival.artists.all %}{{ artist.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p> -->
+            <!-- Artists collapse button -->
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#artists-{{ festival.id }}" role="button" aria-expanded="false" aria-controls="artists-{{ festival.id }}">
+                Artists <i class="fa fa-arrow-down"></i>
+            </a>
+            <!-- Artists collapse content -->
+            <div class="collapse mt-2" id="artists-{{ festival.id }}">
+                <div class="card card-body">
+                    <ul>
+                        {% for artist in festival.artists.all %}
+                            <li>{{ artist.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
         {% endfor %}       
     {% else %}
