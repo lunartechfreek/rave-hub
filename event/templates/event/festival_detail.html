@@ -10,7 +10,11 @@
     </div>
     <div class="row">
         <div class="col-12 mt-4">
-            <p>Event Manager: {{ festival.event_manager }}</p>
+            <p>Event Manager: 
+                <a href="{% url 'user_profile' user_id=festival.event_manager.id %}">
+                    {{ festival.event_manager.username }}
+                </a>
+            </p>
             <p>Artists: 
                 {% for artist in festival.artists.all %}
                 {{ artist.name }}{% if not forloop.last %},
