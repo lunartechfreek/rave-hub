@@ -7,6 +7,7 @@
 {% url 'festival_list' as festival_list_url %}
 {% url 'add_festival' as add_festival_url %}
 {% url 'about' as about_url %}
+{% url 'contact_us' as contact_us_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +72,10 @@
                         <a class="nav-link
                           {% if request.path == about_url %}active{%endif%}" aria-current="page"
                             href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == about_url %}active{%endif%}" aria-current="page"
+                        href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
