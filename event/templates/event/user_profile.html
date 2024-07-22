@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Events By {{ user.username }}</h2>
+    <div class="row">
+        {% for festival in festivals %}
+        <div>
+            <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
+            - {{ festival.date }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
