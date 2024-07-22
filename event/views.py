@@ -2,6 +2,7 @@ from django.views import generic
 from django.contrib import messages
 from django.utils import timezone
 from django.db.models import Q
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Festival
@@ -101,3 +102,9 @@ def festival_search(request):
         ).distinct()
 
     return render(request, 'event/festival_search.html', {'festivals': festivals, 'query': query})
+
+
+def user_profile(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    festivals = Festival.objects.filter(event_manager=user)
+    return render(request, 'event/user_profile.html', {'user': user, 'festivals': festivals})
