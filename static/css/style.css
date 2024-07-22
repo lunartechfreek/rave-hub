@@ -10,6 +10,10 @@ body {
     background-color: white;
 }
 
+.errorlist {
+    list-style-type: none;
+}
+
 /* Navbar */
 .brand {
     font-family: 'Permanent Marker', sans-serif;
