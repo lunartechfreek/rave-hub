@@ -8,6 +8,7 @@
 {% url 'add_festival' as add_festival_url %}
 {% url 'about' as about_url %}
 {% url 'contact_us' as contact_us_url %}
+<!-- {% url 'user_profile' as user_profile_url %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand brand" href="{% url 'home' %}">Rave/Hub</a>
+            <div class="navbar-brand-container">
+                <a class="navbar-brand brand" href="{% url 'home' %}">Rave/Hub</a>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
                 aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -75,27 +78,42 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{%endif%}" aria-current="page"
-                        href="{% url 'contact_us' %}">Contact Us</a>
+                            href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="profile-icon-container">
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle profile-dropdown-btn" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu profile-dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'user_profile' user.id %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle profile-dropdown-btn" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu profile-dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a></li>
+                </ul>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
 
     <!-- Displaying Django messages -->
     <div class="container">
