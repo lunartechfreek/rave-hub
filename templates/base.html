@@ -95,7 +95,8 @@
                 </a>
                 <ul class="dropdown-menu profile-dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{% url 'user_profile' user.id %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'user_profile' user.id %}">My Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a></li>
                     <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                 </ul>
             </li>
