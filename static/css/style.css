@@ -87,10 +87,10 @@ body {
 }
 
 .profile-dropdown-menu {
-    width: 130px; 
+    width: 165px; 
     text-align: center;
     min-width: 0;
-    transform: translate3d(-19px, 47px, 0px) !important;
+    transform: translate3d(-54px, 47px, 0px) !important;
 }
 
 .navbar-brand-container {
@@ -145,8 +145,6 @@ body {
     }
 
     .profile-dropdown-menu {
-        width: 130px; 
-        text-align: center;
-        transform: translate3d(-62px, 52px, 0px) !important;
+        transform: translate3d(-108px, 52px, 0px) !important;
     }
 }
