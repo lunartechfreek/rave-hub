@@ -71,6 +71,82 @@ body {
     padding: 10px;
 }
 
+.profile-dropdown {
+    right: 0;
+    transform: translateX(-48%);
+    min-width: 7rem;
+    text-align: center;
+    margin-top: 0.7rem !important;
+}
+
+.profile-icon-container {
+    position: fixed;
+    top: 8px; 
+    right: 80px;
+    z-index: 1030;
+}
+
+.profile-dropdown-menu {
+    width: 130px; 
+    text-align: center;
+    min-width: 0;
+    transform: translate3d(-19px, 47px, 0px) !important;
+}
+
+.navbar-brand-container {
+    flex: 1;
+}
+
+.navbar-nav {
+    flex: 1;
+}
+
+.profile-dropdown-btn {
+    color: rgba(255, 255, 255, .55);
+}
+
+.profile-dropdown-btn:hover {
+    color: rgba(255, 255, 255, .75);
+}
+
+.profile-dropdown-btn:focus {
+    color: rgba(255, 255, 255, .75);
+}
+
+/* Map Feature */
 #map {
     height: 25vh;
+}
+
+@media (min-width: 992px) {
+    /* Navbar */
+    .navbar-collapse {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    .navbar-brand-container {
+        flex: 1;
+    }
+
+    .navbar-nav {
+        flex: 1; 
+    }
+
+    .profile-icon-container {
+        top: 3px;
+        right: 0px; 
+        font-size: 22px
+    }
+
+    .dropdown-toggle::after {
+        margin-right: 15px;
+    }
+
+    .profile-dropdown-menu {
+        width: 130px; 
+        text-align: center;
+        transform: translate3d(-62px, 52px, 0px) !important;
+    }
 }
