@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from allauth.account.views import PasswordChangeView
 
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
+    path('accounts/password/change/', PasswordChangeView.as_view(), name='account_change_password'),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("", include("event.urls"), name="event-urls"),
