@@ -14,7 +14,8 @@ body {
     list-style-type: none;
 }
 
-/* Navbar */
+/*********************************** Navbar */
+
 .brand {
     font-family: 'Permanent Marker', sans-serif;
     font-size: 1.6rem;
@@ -71,6 +72,111 @@ body {
     padding: 10px;
 }
 
+.profile-dropdown {
+    right: 0;
+    transform: translateX(-48%);
+    min-width: 7rem;
+    text-align: center;
+    margin-top: 0.7rem !important;
+}
+
+.profile-icon-container {
+    position: fixed;
+    top: 8px; 
+    right: 80px;
+    z-index: 1030;
+}
+
+.profile-dropdown-menu {
+    width: 165px; 
+    text-align: center;
+    min-width: 0;
+    transform: translate3d(-54px, 47px, 0px) !important;
+}
+
+.navbar-brand-container {
+    flex: 1;
+}
+
+.navbar-nav {
+    flex: 1;
+}
+
+.profile-dropdown-btn {
+    color: rgba(255, 255, 255, .55);
+}
+
+.profile-dropdown-btn:hover {
+    color: rgba(255, 255, 255, .75);
+}
+
+.profile-dropdown-btn:focus {
+    color: rgba(255, 255, 255, .75);
+}
+
+/*************************** Images */
+
+/* Event Image */
+
+.image-container {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+.festival-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/************************** Map Feature */
 #map {
     height: 25vh;
+}
+
+@media (min-width: 992px) {
+    /* Navbar */
+    .navbar-collapse {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    .navbar-brand-container {
+        flex: 1;
+    }
+
+    .navbar-nav {
+        flex: 1; 
+    }
+
+    .brand {
+        font-size: 2.2rem;
+    }
+
+    .profile-icon-container {
+        top: 11px;
+        right: 0px; 
+        font-size: 22px
+    }
+
+    .dropdown-toggle::after {
+        margin-right: 15px;
+    }
+
+    .navbar-links {
+        font-size: 1.25rem;
+    }
+
+    .profile-dropdown-menu {
+        transform: translate3d(-108px, 58px, 0px) !important;
+    }
 }
