@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 
 TIME_SLOTS = [
@@ -33,14 +34,16 @@ class Festival(models.Model):
     event_manager = models.ForeignKey(User, on_delete=models.CASCADE)
     artists = models.ManyToManyField(Artist, related_name="festivals")
     website = models.URLField(max_length=256, blank=True, null=True)
+    featured_image = CloudinaryField('image', default='placeholder')
     date = models.DateField(null=False, blank=False)
     time = models.CharField(choices=TIME_SLOTS, null=False, blank=False)
-    approved = models.BooleanField(default=False)
+    location_name = models.CharField(max_length=255, null=False, blank=False)
     latitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
     longitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
-    location_name = models.CharField(max_length=255, null=False, blank=False)
+    approved = models.BooleanField(default=False)
+    
 
     class Meta:
         ordering = ['date']
