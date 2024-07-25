@@ -14,7 +14,8 @@ body {
     list-style-type: none;
 }
 
-/* Navbar */
+/*********************************** Navbar */
+
 .brand {
     font-family: 'Permanent Marker', sans-serif;
     font-size: 1.6rem;
@@ -113,7 +114,30 @@ body {
     color: rgba(255, 255, 255, .75);
 }
 
-/* Map Feature */
+/*************************** Images */
+
+/* Event Image */
+
+.image-container {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+
+.festival-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/************************** Map Feature */
 #map {
     height: 25vh;
 }
