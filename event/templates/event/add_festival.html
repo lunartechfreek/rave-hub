@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2>Add Festival</h2>
-            <form id="add-festival-form" method="post" action="{% url 'add_festival' %}" novalidate>
+            <form id="add-festival-form" method="post" action="{% url 'add_festival' %}" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <div class="form-group">
                     {{ form.name.label_tag }}
@@ -25,6 +25,11 @@
                 <div class="form-group">
                     {{ form.website.label_tag }}
                     {{ form.website }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.featured_image.label_tag }}
+                    {{ form.featured_image }}
                 </div>
 
                 <div class="form-group">

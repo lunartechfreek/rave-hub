@@ -18,7 +18,8 @@ class FestivalForm(forms.ModelForm):
             'time', 
             'location_name',
             'latitude', 
-            'longitude'     
+            'longitude',
+            'featured_image'     
             ]
         
         

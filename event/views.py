@@ -34,7 +34,7 @@ def festival_detail(request, id):
 @login_required
 def add_festival(request):
     if request.method == 'POST':
-        form = FestivalForm(request.POST)
+        form = FestivalForm(request.POST, request.FILES)
         if form.is_valid():
             festival = form.save(commit=False)
             festival.event_manager = request.user
@@ -60,7 +60,7 @@ def edit_festival(request, id):
         return redirect('festival_detail', id=festival.id)
     
     if request.method == 'POST':
-        form = FestivalForm(request.POST, instance=festival)
+        form = FestivalForm(request.POST, request.FILES, instance=festival)
         if form.is_valid():
             festival = form.save(commit=False)
             festival.approved = False
