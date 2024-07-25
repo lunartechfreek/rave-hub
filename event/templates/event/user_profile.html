@@ -2,14 +2,43 @@
 
 {% block content %}
 <div class="container">
-    <h2>Events By {{ user.username }}</h2>
+    <h1>Events By {{ user.username }}</h1>
+    {% if request.user == user %}
+    <h2>Approved Events</h2>
+    {% endif %}
     <div class="row">
-        {% for festival in festivals %}
+        {% if approved_festivals %}
+        {% for festival in approved_festivals %}
         <div>
-            <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
-            - {{ festival.date }}
+            <h3>
+                <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
+            </h3>
+            <p>
+                {{ festival.date }}
+            </p>
         </div>
         {% endfor %}
+        {% else %}
+            <p>No festivals found!</p>
+        {% endif %}
     </div>
+    {% if request.user == user %}
+        
+        {% if pending_festivals %}
+        <h2>Pending Events</h2>
+        {% for festival in pending_festivals %}
+            <div>
+                <h3>
+                    <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
+                </h3>
+                <p>
+                    {{ festival.date }}
+                </p>
+            </div>
+        {% endfor %}
+        {% else %}
+            <p>No pending festivals found.</p>
+        {% endif %}
+    {% endif %}
 </div>
 {% endblock %}
