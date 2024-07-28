@@ -14,12 +14,8 @@ body {
     background-attachment: fixed;
 }
 
-/* .index-bg {
-    background-image: url('../images/festival-image-5.jpg');
-} */
-
 .content {
-    margin-top: 400px;
+    margin-top: 40px;
     padding: 20px;
     /* color: white; */
     position: relative;
@@ -33,6 +29,18 @@ body {
 
 .errorlist {
     list-style-type: none;
+}
+
+/*********************************** Background Images */
+.index-bg {
+    background-image: url('../images/festival-image-5.jpg');
+}
+
+
+/*********************************** Buttons */
+.search-btn {
+    padding: .1rem .5rem;
+    margin-bottom: 3px;
 }
 
 /*********************************** Navbar */
@@ -55,28 +63,7 @@ body {
     font-weight: 500;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-}
 
-.image-container {
-    position: relative;
-}
-
-.festival-image {
-    position: absolute;
-}
-
-.festival-link {
-    text-decoration: none;
-    color: black;
-}
-
-.festival-link:hover,
-.page-link {
-    color: blue;
-}
 
 .btn-signup {
     background-color: black;
@@ -143,10 +130,57 @@ body {
     color: rgba(255, 255, 255, .75);
 }
 
-/*************************** Images */
+/*************************** Hero Box */
+
+.hero-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-box > h1 {
+    margin-top: 70vh;
+    font-family: 'Permanent Marker', sans-serif;
+    color: #fff;
+}
+
+/*************************** Event Slides */
+
+/* Event Slide Card */
+.event-slide {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.festival-image {
+    position: absolute;
+}
+
+.festival-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.festival-link:hover,
+.page-link {
+    color: rgba(0, 0, 0, 0.2);
+}
 
 /* Event Image */
-
 .image-container {
     width: 100%;
     /* max-width: 300px; */
@@ -178,8 +212,9 @@ body {
 
 /************************** Slick Slider */
 .slick-next:before, .slick-prev:before {
-    color: black;
+    color: #fff;
     font-size: 40px;
+    opacity: 0.85;
 }
 
 .slick-prev {
