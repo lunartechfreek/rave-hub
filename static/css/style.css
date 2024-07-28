@@ -165,6 +165,11 @@ body {
     left: 0;
 }
 
+/************************** Messages */
+.alert {
+    margin-top: 70px;
+}
+
 
 /************************** Map Feature */
 #map {
