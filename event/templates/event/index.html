@@ -7,15 +7,18 @@
 {% block content %}
 <!-- index.html content starts here -->
 <div class="container">
-    <div class="row">
-        <!-- Search Form -->
-        <form method="GET" action="{% url 'festival_search' %}">
-            <input type="text" name="q" placeholder="Search festivals, genres, artists..." value="{{ request.GET.q }}">
-            <button type="submit">Search</button>
-        </form>
-
-        <!-- Events Column -->
-        <!-- <div class="col-12 mt-2">
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <!-- Search Form -->
+            <form method="GET" action="{% url 'festival_search' %}">
+                <input type="text" name="q" placeholder="Search festivals, genres, artists..."
+                    value="{{ request.GET.q }}">
+                <button type="submit" class="btn btn-dark search-btn">Search</button>
+            </form>
+        </div>
+    </div>
+    <!-- Events Column -->
+    <!-- <div class="col-12 mt-2">
             <div class="row">
                 {% for festival in festival_list %}
                 <div class="col-md-3">
@@ -55,25 +58,26 @@
     </nav>
     {% endif %} -->
 
-
-    <div class="col-12 mt-2">
-        <div class="multiple-items">
-            {% for festival in festival_list %}
-            <div class="card-body">
-                <div class="image-container">
-                    {% if "placeholder" in festival.featured_image.url %}
-                    <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
-                    {% else %}
-                    <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
-                    {% endif %}
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="multiple-items">
+                {% for festival in festival_list %}
+                <div class="card-body event-slide">
+                    <div class="image-container">
+                        {% if "placeholder" in festival.featured_image.url %}
+                        <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                        <h2 class="card-title">{{ festival.name }}</h2>
+                    </a>
+                    <hr />
+                    <p class="card-text h6">{{ festival.date }}</p>
                 </div>
-                <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
-                    <h2 class="card-title">{{ festival.name }}</h2>
-                </a>
-                <hr/>
-                <p class="card-text h6">{{ festival.date }}</p>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </div>
@@ -82,35 +86,34 @@
 
 {% block js %}
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.multiple-items').slick({
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 3,
             dots: true,
-            responsive: [
-                {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
+            responsive: [{
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
                 },
                 {
-                breakpoint: 530,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+                    breakpoint: 530,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 },
                 {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 },
             ]
         });
