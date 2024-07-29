@@ -93,67 +93,58 @@
     </div>
 </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-12 home-content d-flex justify-content-center">
-            <a href="{% url 'festival_list' %}">
-                <div class="link-div fade-link">
-                    <h3>View All Festivals</h3>
-                </div>
-            </a>
+<!-- Welcome Section -->
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 home-content d-flex justify-content-center">
+                <a href="{% url 'festival_list' %}">
+                    <div class="link-div fade-link welcome-link">
+                        <h3>View All Festivals</h3>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <div class="content-box fade-bg">
-                <h2>Welcome to Rave/Hub!</h2>
-                <p>
-                    The best place for finding events near you and<br>
-                    connecting you to the music!
-                </p>
-                <h3>Are You An Event Organiser?</h3>
-                <p>
-                    Need to add you own event?<br>
-                    Its easy, you can get started below!
-                </p>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="content-box fade-bg">
+                    <h2>Welcome to Rave/Hub!</h2>
+                    <p>
+                        The best place for finding events near you and<br>
+                        connecting you to the music!
+                    </p>
+                    <h3>Are You An Event Organiser?</h3>
+                    <p>
+                        Need to add you own event?<br>
+                        Its easy, you can get started below!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'add_festival' %}">
+                        <div class="link-div fade-link">
+                            <h3>Click Here To Add A Festival</h3>
+                        </div>
+                    </a>
+                {% else %}
+                <div class="content-box fade-bg">
+                    <h3 id="login-false">It looks like you are not logged in!</h3>
+                    <a href="{% url 'account_signup' %}">
+                        <h4>Click Here To Login</h4>
+                    </a>
+                    <a href="{% url 'account_signup' %}">
+                        <h4>Click Here To Create An Account</h4>
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="row">
-        {% if user.is_authenticated %}
-        <div class="col-12 d-flex justify-content-center">
-            <a href="{% url 'add_festival' %}">
-                <div class="link-div fade-link">
-                    <h3>Click Here To Add A Festival</h3>
-                </div>
-            </a>
-        </div>
-        {% else %}
-        <div class="col-12 d-flex justify-content-center">
-            <div class="fade-bg mt-3">
-                <h2 id="login-false">It looks like you are not logged in!</h2>
-            </div>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-            <a href="{% url 'account_login' %}">
-                <div class="link-div fade-link">
-                    <h3>Click Here To Login</h3>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-            <a href="{% url 'account_signup' %}">
-                <div class="link-div fade-link">
-                    <h3>Click Here To Create An Account</h3>
-                </div>
-            </a>
-        </div>
-        {% endif %}
-    </div>
-</div>
-</div>
+</section>
 
-</div>
 <!-- index.html content ends here -->
 {% endblock %}
 
