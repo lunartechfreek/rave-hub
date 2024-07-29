@@ -103,6 +103,10 @@ p {
     background-image: url('../images/festival-image-5.jpg');
 }
 
+.festival-list-bg {
+    background-image: url('../images/festival-image-7.jpg');
+}
+
 
 /*********************************** Buttons */
 button {
@@ -320,7 +324,7 @@ button {
     left: 0;
 }
 
-/************************** Home Content */
+/************************** Home */
 
 .content-box > h2 {
     margin-top: 12px;
@@ -343,6 +347,25 @@ button {
 
 .content-box h4:hover {
     color: rgba(255, 255, 255, .7);
+}
+
+/************************** Festival List */
+
+/* Pagination Controls */
+.page-item.active .page-link {
+    color: #373F47;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.page-link {
+    color: #fff;
+    background-color: #373F47;
+    border: 1px solid #373F47;
+}
+
+.page-link:hover {
+    color: #373F47;
 }
 
 /************************** Messages */
