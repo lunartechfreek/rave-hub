@@ -24,6 +24,10 @@ body {
     min-height: 100vh;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Headers */
 h1 {
     font-family: 'Permanent Marker', sans-serif;
@@ -44,7 +48,7 @@ p {
 }
 
 .dark-bg {
-    background-color: black;
+    background-color: #020c0e;
 }
 
 .errorlist {
@@ -228,7 +232,6 @@ button {
 }
 
 .festival-link {
-    text-decoration: none;
     color: #FCFBEF;
 }
 
@@ -274,6 +277,18 @@ button {
 #map {
     height: 25vh;
 }
+
+/************************** Footer */
+.footer-icon {
+    color: #FCFBEF;
+    font-size: 40px;
+    margin: 5px 100px;
+}
+
+.footer-icon:hover {
+    color: rgba(255, 255, 255, .5)
+}
+
 
 @media (min-width: 992px) {
     /* Navbar */
