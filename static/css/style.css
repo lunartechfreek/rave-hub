@@ -32,6 +32,7 @@ body {
     font-size: 1.3rem;
     text-align: center;
     color: #fff;
+    border-radius: 15px;
 }
 
 a {
@@ -85,10 +86,16 @@ p {
     color: rgba(255, 255, 255, .7);
 }
 
+.welcome-link {
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
 .link-div {
     width: fit-content;
     padding: 5px;
     color: #fff;
+    border-radius: 15px;
 }
 
 /*********************************** Background Images */
@@ -204,9 +211,19 @@ button {
 }
 
 .hero-box > h1 {
-    margin-top: 65vh;
+    margin-top: 60vh;
     color: #fff;
     font-size: 100px;
+    margin-bottom: -12px;
+}
+
+.hero-box > h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.search-div {
+    margin-bottom: -20px;
 }
 
 /************************** Slick Slider */
@@ -242,6 +259,8 @@ button {
 .event-slide {
     color: #fff;
     margin-bottom: 15px;
+    border-radius: 15px;
+
 }
 
 .slick-slide > div {
@@ -313,6 +332,17 @@ button {
 
 #login-false {
     color: #fff;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.content-box h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.content-box h4:hover {
+    color: rgba(255, 255, 255, .7);
 }
 
 /************************** Messages */
