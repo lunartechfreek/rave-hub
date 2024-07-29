@@ -62,19 +62,27 @@
         <div class="col-12 mt-2">
             <div class="multiple-items">
                 {% for festival in festival_list %}
-                <div class="card-body event-slide">
-                    <div class="image-container">
-                        {% if "placeholder" in festival.featured_image.url %}
-                        <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
-                        {% else %}
-                        <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
-                        {% endif %}
-                    </div>
+                <div class="card-container  event-slide">
                     <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
-                        <h2 class="card-title">{{ festival.name }}</h2>
+
+                        <div class="card-body">
+
+                            <div class="image-container">
+                                {% if "placeholder" in festival.featured_image.url %}
+                                <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                    alt="{{ festival.title }}">
+                                {% endif %}
+                            </div>
+                            <h2 class="card-title">{{ festival.name }}</h2>
+                            <hr/>
+                            <p class="card-text h6">{{ festival.date }}</p>
+
+
+                        </div>
                     </a>
-                    <hr />
-                    <p class="card-text h6">{{ festival.date }}</p>
                 </div>
                 {% endfor %}
             </div>
