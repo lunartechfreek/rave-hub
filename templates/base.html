@@ -140,8 +140,12 @@
 
     <div class="container hero-box">
         <h1>{% block heading %}{% endblock heading %}</h1>
+        <!-- <h3>Connecting You To The Music</h3> -->
+        {% if is_index %}
         <h3>Connecting You To The Music</h3>
-        <div class="row justify-content-end search-div">
+        {% endif %}
+        <div class="row justify-content-end search-div 
+        {% if not is_index %}mt-4{% endif %}">
             <div class="col-auto">
                 <!-- Search Form -->
                 <form method="GET" action="{% url 'festival_search' %}">
@@ -163,18 +167,18 @@
 
     <!-- Footer -->
     <footer class="footer py-1 dark-bg text-center">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                aria-label="Visit our Facebook page (Opens in new tab)">
-                <i class="fab fa-facebook-square footer-icon"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                aria-label="Visit our instagram page (Opens in new tab)">
-                <i class="fab fa-instagram-square footer-icon"></i>
-            </a>
-            <a href="https://www.tiktok.com/explore" target="_blank" rel="noopener"
-                aria-label="Visit our Tiktok page (Opens in new tab)">
-                <i class="fab fa-tiktok footer-icon"></i>
-            </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (Opens in new tab)">
+            <i class="fab fa-facebook-square footer-icon"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+            aria-label="Visit our instagram page (Opens in new tab)">
+            <i class="fab fa-instagram-square footer-icon"></i>
+        </a>
+        <a href="https://www.tiktok.com/explore" target="_blank" rel="noopener"
+            aria-label="Visit our Tiktok page (Opens in new tab)">
+            <i class="fab fa-tiktok footer-icon"></i>
+        </a>
     </footer>
 
     <!-- Bootstrap -->
