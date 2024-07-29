@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Festival
 from .forms import FestivalForm
 
@@ -20,13 +21,33 @@ class FestivalList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['is_index'] = True  # Add this line to indicate the index page
+        context['is_index'] = True
         return context
 
 
 def festival_list(request):
     festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
-    return render(request, 'event/festival_list.html', {'festivals': festivals})
+    
+    
+    paginator = Paginator(festivals, 4)
+
+    page = request.GET.get('page')
+    try:
+        festivals = paginator.page(page)
+    except PageNotAnInteger:
+        festivals = paginator.page(1)
+    except EmptyPage:
+        festivals = paginator.page(paginator.num_pages)
+
+    context = {
+        'festivals': festivals,
+        'is_paginated': festivals.has_other_pages(),
+        'page_obj': festivals,
+    }
+
+    return render(request, 'event/festival_list.html', context)
+        
+    # return render(request, 'event/festival_list.html', {'festivals': festivals})
 
 
 def festival_detail(request, id):
