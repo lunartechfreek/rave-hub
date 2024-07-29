@@ -15,7 +15,6 @@ body {
 }
 
 .content {
-    margin-top: 40px;
     padding: 20px;
     /* color: white; */
     position: relative;
@@ -43,6 +42,11 @@ body {
     margin-bottom: 3px;
 }
 
+.btn-signup {
+    background-color: black;
+    color: #fff;
+}
+
 /*********************************** Navbar */
 
 .navbar {
@@ -61,13 +65,6 @@ body {
 
 .active {
     font-weight: 500;
-}
-
-
-
-.btn-signup {
-    background-color: black;
-    color: #fff;
 }
 
 .artist-checkboxes {
@@ -140,9 +137,10 @@ body {
 }
 
 .hero-box > h1 {
-    margin-top: 70vh;
+    margin-top: 65vh;
     font-family: 'Permanent Marker', sans-serif;
     color: #fff;
+    font-size: 100px;
 }
 
 /*************************** Event Slides */
@@ -172,12 +170,12 @@ body {
 
 .festival-link {
     text-decoration: none;
-    color: #fff;
+    color: #FCFBEF;
 }
 
 .festival-link:hover,
 .page-link {
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 1);
 }
 
 /* Event Image */
