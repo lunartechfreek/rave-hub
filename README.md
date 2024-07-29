@@ -67,3 +67,52 @@ I used a backup font of Sans-Serif incase there was a problem loading the other 
 
 - [Font Awesome](https://fontawesome.com/) icons were used throughout the site, such as the social media icons in the footer.
 
+## User Stories
+
+### Site Users
+
+- As a site user I can easily view upcoming events so that I can plan which ones to attend.
+
+- As a site user I can search for events so that I can only see events that interest me.
+
+- As a site user I can see details of the events so that I can decide if I would like to attend.
+
+- As a site user I can leave comments on the event page so that I can chat to other users with similar interests.
+
+- As a site user I can send direct message to event owner so that I can get answers to any questions I have.
+
+- As a site user I can find information about the site and services so that I can understand what the site offers.
+
+- As a site user i can view other events by the event owner so that I can attend events by an owner I know puts on good events.
+
+- As a site user I would like to contact the site owner so that they can answer any queries I have
+
+### Event Owner
+
+- As an event owner I can add an upcoming event so that I can encourage people to attend.
+
+- As an event owner I can edit an upcoming event so that I can keep users updated.
+
+- As an event owner I can delete an upcoming event that I have posted so that I can remove it from the website.
+
+- As an event owner I can add details about an upcoming event so that I can provide users with relevant information.
+
+- As an event owner I can create an account and sign in so that I am the only one who can modify the event I added.
+
+- As an event owner I am able to change my password.
+
+- As an event owner I can have a profile page with all my events displayed.
+
+- As an event owner I am able to sign in with social media.
+
+### Site Owner
+
+- As a site owner I can approve events before they appear on the site.
+
+- As a site owner I can log in to the admin panel so that I can manage events.
+
+- As a site owner I can change the about text so that I can keep users updated with any relevant information.
+
+- As a site owner I can provide users with a contact page so that they are able to contact us.
+
+
