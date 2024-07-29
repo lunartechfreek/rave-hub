@@ -24,6 +24,16 @@ body {
     min-height: 100vh;
 }
 
+.content-box {
+    width: fit-content;
+    padding: 10px 20px;
+    margin-top: 15px;
+    /* margin-bottom: 10px; */
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+}
+
 a {
     text-decoration: none;
 }
@@ -46,12 +56,13 @@ h2, h3, h4, h5, h6 {
 /* Secondary Text */
 p {
     font-family: 'Open Sans', sans-serif;
+    color: #fff;
 }
 
 /* Colours */
 
 .fade-bg {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dark-bg {
@@ -65,12 +76,19 @@ p {
 /* Links */
 
 .fade-link {
-    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .fade-link:hover {
     background-color: rgba(0, 0, 0, 0.9);
     color: rgba(255, 255, 255, .7);
+}
+
+.link-div {
+    width: fit-content;
+    padding: 5px;
+    color: #fff;
 }
 
 /*********************************** Background Images */
@@ -285,9 +303,15 @@ button {
 
 /************************** Home Content */
 
-.link-div {
-    width: fit-content;
-    padding: 5px;
+.content-box > h2 {
+    margin-top: 12px;
+}
+
+.content-box > h3 {
+    margin-top: 25px;
+}
+
+#login-false {
     color: #fff;
 }
 
@@ -303,6 +327,10 @@ button {
 }
 
 /************************** Footer */
+footer {
+    margin-top: 120px;
+}
+
 .footer-icon {
     color: #FCFBEF;
     font-size: 40px;
