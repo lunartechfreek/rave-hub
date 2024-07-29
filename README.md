@@ -116,3 +116,147 @@ I used a backup font of Sans-Serif incase there was a problem loading the other 
 - As a site owner I can provide users with a contact page so that they are able to contact us.
 
 
+## Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
+
+Home
+  - ![screenshot](documentation/wireframes/mobile-home.png)
+
+Festival List
+  - ![screenshot](documentation/wireframes/mobile-festival-list.png)
+
+Festival Detail
+  - ![screenshot](documentation/wireframes/mobile-festival-detail.png)
+
+Add Festival
+  - ![screenshot](documentation/wireframes/mobile-add-festival.png)
+
+Edit Festival
+  - ![screenshot](documentation/wireframes/mobile-edit-festival.png)
+
+About
+  - ![screenshot](documentation/wireframes/mobile-about.png)
+
+Contact Us
+  - ![screenshot](documentation/wireframes/mobile-contact-us.png)
+
+Festival Search
+  - ![screenshot](documentation/wireframes/mobile-festival-search.png)
+
+User Profile
+  - ![screenshot](documentation/wireframes/mobile-user-profile.png)
+
+Login
+  - ![screenshot](documentation/wireframes/mobile-login.png)
+
+Logout
+  - ![screenshot](documentation/wireframes/mobile-logout.png)
+
+Change Password
+  - ![screenshot](documentation/wireframes/mobile-password-change.png)
+
+Sign Up
+  - ![screenshot](documentation/wireframes/mobile-signup.png)
+
+
+</details>
+
+### Tablet Wireframes
+
+<details>
+<summary> Click here to see the Tablet Wireframes </summary>
+
+Home
+  - ![screenshot](documentation/wireframes/tablet-home.png)
+
+Festival List
+  - ![screenshot](documentation/wireframes/tablet-festival-list.png)
+
+Festival Detail
+  - ![screenshot](documentation/wireframes/tablet-festival-detail.png)
+
+Add Festival
+  - ![screenshot](documentation/wireframes/tablet-add-festival.png)
+
+Edit Festival
+  - ![screenshot](documentation/wireframes/tablet-edit-festival.png)
+
+About
+  - ![screenshot](documentation/wireframes/tablet-about.png)
+
+Contact Us
+  - ![screenshot](documentation/wireframes/tablet-contact-us.png)
+
+Festival Search
+  - ![screenshot](documentation/wireframes/tablet-festival-search.png)
+
+User Profile
+  - ![screenshot](documentation/wireframes/tablet-user-profile.png)
+
+Login
+  - ![screenshot](documentation/wireframes/tablet-login.png)
+
+Logout
+  - ![screenshot](documentation/wireframes/tablet-logout.png)
+
+Change Password
+  - ![screenshot](documentation/wireframes/tablet-password-change.png)
+
+Sign Up
+  - ![screenshot](documentation/wireframes/tablet-signup.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
+
+Home
+  - ![screenshot](documentation/wireframes/desktop-home.png)
+
+Festival List
+  - ![screenshot](documentation/wireframes/desktop-festival-list.png)
+
+Festival Detail
+  - ![screenshot](documentation/wireframes/desktop-festival-detail.png)
+
+Add Festival
+  - ![screenshot](documentation/wireframes/desktop-add-festival.png)
+
+Edit Festival
+  - ![screenshot](documentation/wireframes/desktop-edit-festival.png)
+
+About
+  - ![screenshot](documentation/wireframes/desktop-about.png)
+
+Contact Us
+  - ![screenshot](documentation/wireframes/desktop-contact-us.png)
+
+Festival Search
+  - ![screenshot](documentation/wireframes/desktop-festival-search.png)
+
+User Profile
+  - ![screenshot](documentation/wireframes/desktop-user-profile.png)
+
+Login
+  - ![screenshot](documentation/wireframes/desktop-login.png)
+
+Logout
+  - ![screenshot](documentation/wireframes/desktop-logout.png)
+
+Change Password
+  - ![screenshot](documentation/wireframes/desktop-password-change.png)
+
+Sign Up
+  - ![screenshot](documentation/wireframes/desktop-signup.png)
+
+</details>
+
