@@ -346,8 +346,16 @@ button {
 }
 
 /************************** Messages */
-.alert {
-    margin-top: 70px;
+.message-box {
+    margin-top: 65px;
+    color: #020c0e;
+    background-color: #fff;
+    text-align: center;
+    padding-right: 0;
+    border-radius: 15px;
+    position: absolute;
+    width: 80%;
+    left: 10%;
 }
 
 
@@ -369,6 +377,15 @@ footer {
 
 .footer-icon:hover {
     color: rgba(255, 255, 255, .5)
+}
+
+@media (min-width: 768px) {
+    /* Messages */
+    .message-box {
+        margin-top: 80px;
+        width: 50%;
+        left: 25%;
+    }
 }
 
 
@@ -409,4 +426,6 @@ footer {
     .profile-dropdown-menu {
         transform: translate3d(-108px, 58px, 0px) !important;
     }
+
+    
 }
