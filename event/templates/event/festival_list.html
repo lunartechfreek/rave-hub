@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}All Festivals{% endblock title %}
 {% block heading %}All Festivals{% endblock heading %}
@@ -9,16 +10,11 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mt-2">
-            <h2>Upcoming Festivals</h2>
+            <h2 class="page-header">Upcoming Festivals</h2>
         </div>
     </div>
-    <!-- Search Form -->
-    <form method="GET" action="{% url 'festival_search' %}">
-        <input type="text" name="q" placeholder="Search festivals, genres, artists..." value="{{ request.GET.q }}">
-        <button type="submit">Search</button>
-    </form>
     
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12 mt-4">
             {% for festival in festivals %}
             <h3>
@@ -26,7 +22,70 @@
             </h3>
             {% endfor %}
         </div>
+    </div> -->
+
+    {% if festivals %}
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="row">
+                {% for festival in festivals %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in festival.featured_image.url %}
+                                <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                                {% else %}
+                                <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
+                                {% endif %}
+                            </div>
+                            <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                                <h2 class="card-title">{{ festival.name }}</h2>
+                            </a>
+                            <hr/>
+                            <p class="card-text h6">{{ festival.date }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
+    {% endif %}
+    
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+            </li>
+            {% endif %}
+    
+            {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+            <li class="page-item active">
+                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            </li>
+            {% elif num > page_obj.number|add:'-5' and num < page_obj.number|add:'5' %}
+            <li class="page-item">
+                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+    
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 
 {% endblock %}
