@@ -62,6 +62,17 @@ p {
     list-style-type: none;
 }
 
+/* Links */
+
+.fade-link {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fade-link:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, .7);
+}
+
 /*********************************** Background Images */
 .index-bg {
     background-image: url('../images/festival-image-5.jpg');
@@ -278,11 +289,6 @@ button {
     width: fit-content;
     padding: 5px;
     color: #fff;
-}
-
-.link-div:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: rgba(255, 255, 255, .7);
 }
 
 /************************** Messages */
