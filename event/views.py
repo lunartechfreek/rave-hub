@@ -18,6 +18,11 @@ class FestivalList(generic.ListView):
         # Ensures festivals that are in the past are not displayed
         return Festival.objects.filter(approved=True, date__gte=timezone.now().date()).order_by('date')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_index'] = True  # Add this line to indicate the index page
+        return context
+
 
 def festival_list(request):
     festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
