@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+/*********************************** General Styles */
+
 body {
     height: 100%;
     overflow-x: hidden;
@@ -85,6 +87,15 @@ body {
     padding: 10px;
 }
 
+.navbar-brand-container {
+    flex: 1;
+}
+
+.navbar-nav {
+    flex: 1;
+}
+
+/* Profile Dropdown */
 .profile-dropdown {
     right: 0;
     transform: translateX(-48%);
@@ -105,14 +116,6 @@ body {
     text-align: center;
     min-width: 0;
     transform: translate3d(-54px, 47px, 0px) !important;
-}
-
-.navbar-brand-container {
-    flex: 1;
-}
-
-.navbar-nav {
-    flex: 1;
 }
 
 .profile-dropdown-btn {
@@ -143,12 +146,40 @@ body {
     font-size: 100px;
 }
 
-/*************************** Event Slides */
+/************************** Slick Slider */
+
+/* Arrows */
+.slick-next:before, .slick-prev:before {
+    color: #fff;
+    font-size: 40px;
+    opacity: 1;
+}
+
+.slick-prev {
+    left: -40px;
+}
+
+.slick-prev, .slick-next {
+    top: 40%;
+}
+
+/* Dots */
+.slick-dots li button:before {
+    color: #fff;
+    font-size: 15px;
+    opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #fff;
+}
 
 /* Event Slide Card */
 .event-slide {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
 }
 
 .slick-slide > div {
@@ -168,14 +199,27 @@ body {
     position: absolute;
 }
 
+.card-title {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
 .festival-link {
     text-decoration: none;
     color: #FCFBEF;
 }
 
-.festival-link:hover,
-.page-link {
-    color: rgba(0, 0, 0, 1);
+.card-body > hr {
+        margin: 0.3rem 0;
+        opacity: .25;
+}
+
+.event-slide:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.festival-link:hover {
+    color: rgba(255, 255, 255, .7);
 }
 
 /* Event Image */
@@ -203,24 +247,9 @@ body {
 }
 
 
-/************************** Map Feature */
+/************************** Map */
 #map {
     height: 25vh;
-}
-
-/************************** Slick Slider */
-.slick-next:before, .slick-prev:before {
-    color: #fff;
-    font-size: 40px;
-    opacity: 0.85;
-}
-
-.slick-prev {
-    left: -40px;
-}
-
-.slick-prev, .slick-next {
-    top: 40%;
 }
 
 @media (min-width: 992px) {
