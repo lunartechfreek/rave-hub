@@ -16,7 +16,6 @@ class FestivalList(generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        # Ensures festivals that are in the past are not displayed
         return Festival.objects.filter(approved=True, date__gte=timezone.now().date()).order_by('date')
 
     def get_context_data(self, **kwargs):
@@ -46,8 +45,6 @@ def festival_list(request):
     }
 
     return render(request, 'event/festival_list.html', context)
-        
-    # return render(request, 'event/festival_list.html', {'festivals': festivals})
 
 
 def festival_detail(request, id):
@@ -127,7 +124,25 @@ def festival_search(request):
             Q(artists__genre__name__icontains=query)
         ).distinct()
 
-    return render(request, 'event/festival_search.html', {'festivals': festivals, 'query': query})
+    page = request.GET.get('page', 1)
+    paginator = Paginator(festivals, 8)
+
+    try:
+        festivals = paginator.page(page)
+    except PageNotAnInteger:
+        festivals = paginator.page(1)
+    except EmptyPage:
+        festivals = paginator.page(paginator.num_pages)
+
+    context = {
+        'festivals': festivals,
+        'query': query,
+        'is_paginated': festivals.has_other_pages(),
+        'paginator': paginator,
+        'page_obj': festivals,
+    }
+
+    return render(request, 'event/festival_search.html', context)
 
 
 def user_profile(request, user_id):
@@ -135,7 +150,6 @@ def user_profile(request, user_id):
     festivals = Festival.objects.filter(event_manager=user)
     approved_festivals = festivals.filter(approved=True)
     pending_festivals = festivals.filter(approved=False)
-    # return render(request, 'event/user_profile.html', {'user': user, 'festivals': festivals, 'pending_festivals': pending_festivals})
     return render(request, 'event/user_profile.html', {
         'user': user,
         'approved_festivals': approved_festivals,
