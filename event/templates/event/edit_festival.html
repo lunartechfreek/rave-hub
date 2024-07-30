@@ -3,14 +3,16 @@
 
 {% block title %}Edit Festival{% endblock title %}
 {% block heading %}Edit Festival{% endblock heading %}
-{% block background_class %}Edit-festival-bg{% endblock background_class %}
+{% block background_class %}edit-festival-bg{% endblock background_class %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2>edit Festival</h2>
-            <form id="edit-festival-form" method="post" action="{% url 'edit_festival' festival.id %}" enctype="multipart/form-data" novalidate>
+            <div class="content-box fade-bg form-box">
+                <h2>Edit Festival</h2>
+                <form id="edit-festival-form" method="post" action="{% url 'edit_festival' festival.id %}"
+                    enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <div class="form-group">
                     {{ form.name.label_tag }}
@@ -57,8 +59,11 @@
                 <!-- Leaflet Map to select festival location -->
                 <div id="map"></div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn light-btn mb-4">Submit</button>
+                </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
