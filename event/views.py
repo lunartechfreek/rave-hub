@@ -29,7 +29,7 @@ def festival_list(request):
     festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
     
     
-    paginator = Paginator(festivals, 4)
+    paginator = Paginator(festivals, 8)
 
     page = request.GET.get('page')
     try:
