@@ -115,7 +115,8 @@ def delete_festival(request, id):
 
 def festival_search(request):
     query = request.GET.get('q')
-    festivals = Festival.objects.all()
+    festivals = Festival.objects.filter(approved=True)
+
 
     if query:
         festivals = festivals.filter(
