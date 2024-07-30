@@ -42,11 +42,12 @@
                                         alt="{{ festival.title }}">
                                     {% endif %}
                                 </div>
-
                                 <h2 class="card-title">{{ festival.name }}</h2>
-
                                 <hr />
                                 <p class="card-text h6">{{ festival.date }}</p>
+                                <p class="card-text h6">Genres:
+                                    {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %},
+                                    {% endif %}{% endfor %}</p>
                             </div>
                         </a>
                     </div>
