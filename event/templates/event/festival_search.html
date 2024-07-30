@@ -1,49 +1,82 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Search Results{% endblock title %}
 {% block heading %}Search{% endblock heading %}
 {% block background_class %}festival-search-bg{% endblock background_class %}
 
 {% block content %}
-<div class="container">
-    <h2>Search Results for "{{ query }}"</h2>
 
-<div class="col-10 mt-2 offset-1">
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <h2 class="page-header">Search Results for "{{ query }}"</h2>
+        </div>
+    </div>
+
     {% if festivals %}
-        <div class="row">
-            {% for festival in festivals %}
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="row">
+                {% for festival in festivals %}
                 <div class="col-md-3">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h3>
-                                <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
-                            </h3>
-                            <p>Date: {{ festival.date }}</p>
-                            <p>Genres: {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-                            <!-- Artists collapse button -->
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#artists-{{ festival.id }}" role="button" aria-expanded="false" aria-controls="artists-{{ festival.id }}">
-                                Artists <i class="fa fa-arrow-down"></i>
-                            </a>
-                            <!-- Artists collapse content -->
-                            <div class="collapse mt-2" id="artists-{{ festival.id }}">
-                                <div class="card card-body">
-                                    <ul>
-                                        {% for artist in festival.artists.all %}
-                                            <li>{{ artist.name }}</li>
-                                        {% endfor %}
-                                    </ul>
+                    <div class="card mb-3 card-container event-slide fade-link">
+                        <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in festival.featured_image.url %}
+                                    <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                        alt="{{ festival.title }}">
+                                    {% endif %}
                                 </div>
+                                <h2 class="card-title">{{ festival.name }}</h2>
+                                <hr />
+                                <p class="card-text h6">{{ festival.date }}</p>
+                                <p class="card-text h6">Genres:
+                                    {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %},
+                                    {% endif %}{% endfor %}</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:4 %}
-                    </div><div class="row">
+            </div>
+            <div class="row">
                 {% endif %}
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    {% else %}
-        <p>No festivals found.</p>
+    </div>
+    {% endif %}
+
+    {% if is_paginated %}
+    <nav class="pagination-controls" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}&q={{ query }}">Previous</a>
+            </li>
+            {% endif %}
+
+            {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+            <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}&q={{ query }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}&q={{ query }}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
     {% endif %}
 </div>
+
 {% endblock %}
