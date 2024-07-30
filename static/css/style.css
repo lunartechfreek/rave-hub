@@ -116,6 +116,10 @@ p {
     background-image: url('../images/festival-image-2.jpg');
 }
 
+.edit-festival-bg {
+    background-image: url('../images/festival-image-8.jpg');
+}
+
 
 /*********************************** Buttons */
 button {
@@ -416,6 +420,21 @@ button {
 #map {
     height: 25vh;
     margin-bottom: 30px;
+}
+
+/************************** Edit Festival */
+
+.form-group > a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.form-group > a:hover {
+    color: #919396;
+}
+
+.checked {
+    background-color: #919396;
 }
 
 /************************** Messages */
