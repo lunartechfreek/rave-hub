@@ -112,6 +112,9 @@ p {
     background-image: url('../images/festival-image-6.jpg');
 }
 
+.add-festival-bg {
+    background-image: url('../images/festival-image-2.jpg');
+}
 
 
 /*********************************** Buttons */
@@ -226,18 +229,6 @@ button {
     text-align: center;
     min-width: 0;
     transform: translate3d(-54px, 47px, 0px) !important;
-}
-
-.profile-dropdown-btn {
-    color: rgba(255, 255, 255, .55);
-}
-
-.profile-dropdown-btn:hover {
-    color: rgba(255, 255, 255, .75);
-}
-
-.profile-dropdown-btn:focus {
-    color: rgba(255, 255, 255, .75);
 }
 
 /*************************** Hero Box */
@@ -385,9 +376,6 @@ button {
 }
 
 /************************** Festival List */
-
-
-
 /* Pagination Controls */
 .page-item.active .page-link {
     color: #373F47;
@@ -409,6 +397,27 @@ button {
     margin-top: 50px;
 }
 
+/************************** Add Festival */
+
+.form-box {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.form-box > h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 25vh;
+    margin-bottom: 30px;
+}
+
 /************************** Messages */
 .message-box {
     margin-top: 65px;
@@ -420,12 +429,6 @@ button {
     position: absolute;
     width: 80%;
     left: 10%;
-}
-
-
-/************************** Map */
-#map {
-    height: 25vh;
 }
 
 /************************** Footer */
