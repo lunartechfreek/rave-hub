@@ -108,6 +108,11 @@ p {
     background-image: url('../images/festival-image-7.jpg');
 }
 
+.festival-search-bg {
+    background-image: url('../images/festival-image-6.jpg');
+}
+
+
 
 /*********************************** Buttons */
 button {
