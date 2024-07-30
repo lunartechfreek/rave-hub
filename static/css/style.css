@@ -125,10 +125,39 @@ button {
     background-color: #373F47;
 }
 
-.btn-signup {
-    background-color: black;
+.dark-btn {
+    background-color: #020c0e;
     color: #fff;
 }
+
+.dark-btn:hover {
+    background-color: #fff;
+    color: #020c0e;
+}
+
+.light-btn {
+    background-color: #fff;
+    color: #020c0e;
+}
+
+.light-btn:hover {
+    background-color: #020c0e;
+    color: #fff;
+}
+
+.profile-dropdown-btn {
+    color: rgba(255, 255, 255, .55);
+}
+
+.profile-dropdown-btn:hover {
+    color: rgba(255, 255, 255, .75);
+}
+
+.profile-dropdown-btn:focus {
+    color: rgba(255, 255, 255, .75);
+}
+
+
 
 /*********************************** Navbar */
 
