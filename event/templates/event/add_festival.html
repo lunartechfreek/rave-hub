@@ -9,8 +9,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2>Add Festival</h2>
-            <form id="add-festival-form" method="post" action="{% url 'add_festival' %}" enctype="multipart/form-data" novalidate>
+            <div class="content-box fade-bg form-box">
+                <h2>Please Complete The Form</h2>
+                <form id="add-festival-form" method="post" action="{% url 'add_festival' %}"
+                    enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <div class="form-group">
                     {{ form.name.label_tag }}
@@ -57,8 +59,11 @@
                 <!-- Leaflet Map to select festival location -->
                 <div id="map"></div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn light-btn mb-4">Submit</button>
+                    </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
