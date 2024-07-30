@@ -84,7 +84,7 @@ p {
 
 .fade-link:hover {
     background-color: rgba(0, 0, 0, 0.9);
-    color: rgba(255, 255, 255, .7);
+    color: #919396;
 }
 
 .welcome-link {
@@ -329,7 +329,7 @@ button {
 }
 
 .festival-link:hover {
-    color: rgba(255, 255, 255, .7);
+    color: #919396;
 }
 
 /* Event Image */
@@ -372,7 +372,7 @@ button {
 }
 
 .content-box h4:hover {
-    color: rgba(255, 255, 255, .7);
+    color: #919396;
 }
 
 /************************** Festival List */
@@ -443,7 +443,7 @@ footer {
 }
 
 .footer-icon:hover {
-    color: rgba(255, 255, 255, .5)
+    color: #919396;
 }
 
 @media (min-width: 768px) {
