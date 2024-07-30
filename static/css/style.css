@@ -37,6 +37,7 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Headers */
@@ -273,7 +274,7 @@ button {
 
 .card {
     border: none;
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 .image-container {
@@ -351,6 +352,8 @@ button {
 
 /************************** Festival List */
 
+
+
 /* Pagination Controls */
 .page-item.active .page-link {
     color: #373F47;
@@ -366,6 +369,10 @@ button {
 
 .page-link:hover {
     color: #373F47;
+}
+
+.pagination-controls {
+    margin-top: 50px;
 }
 
 /************************** Messages */
