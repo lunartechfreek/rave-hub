@@ -13,7 +13,7 @@
             <h2 class="page-header">Upcoming Festivals</h2>
         </div>
     </div>
-    
+
     <!-- <div class="row">
         <div class="col-12 mt-4">
             {% for festival in festivals %}
@@ -30,23 +30,46 @@
             <div class="row">
                 {% for festival in festivals %}
                 <div class="col-md-3">
-                    <div class="card mb-3">
+                    <div class="card mb-3 card-container event-slide fade-link">
+                        <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in festival.featured_image.url %}
+                                    <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                        alt="{{ festival.title }}">
+                                    {% endif %}
+                                </div>
+
+                                <h2 class="card-title">{{ festival.name }}</h2>
+
+                                <hr />
+                                <p class="card-text h6">{{ festival.date }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <div class="card-container event-slide fade-link">
+                    <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in festival.featured_image.url %}
-                                <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
+                                <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                    alt="placeholder image">
                                 {% else %}
-                                <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
+                                <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                    alt="{{ festival.title }}">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
-                                <h2 class="card-title">{{ festival.name }}</h2>
-                            </a>
-                            <hr/>
+                            <h2 class="card-title">{{ festival.name }}</h2>
+                            <hr />
                             <p class="card-text h6">{{ festival.date }}</p>
                         </div>
-                    </div>
-                </div>
+                    </a>
+                </div> -->
                 {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
@@ -56,16 +79,16 @@
         </div>
     </div>
     {% endif %}
-    
+
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav class="pagination-controls" aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li class="page-item">
                 <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
             </li>
             {% endif %}
-    
+
             {% for num in page_obj.paginator.page_range %}
             {% if num == page_obj.number %}
             <li class="page-item active">
@@ -77,7 +100,7 @@
             </li>
             {% endif %}
             {% endfor %}
-    
+
             {% if page_obj.has_next %}
             <li class="page-item">
                 <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
