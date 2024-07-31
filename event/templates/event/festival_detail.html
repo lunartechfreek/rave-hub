@@ -1,8 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ festival.name }}{% endblock title %}
 {% block heading %}{{ festival.name }}{% endblock heading %}
-{% block background_class %}festival-detail-bg{% endblock background_class %}
+
+{% block body %}
+{% if "placeholder" in festival.featured_image.url %}
+style="background-image: url({% static 'images/default.jpg' %});"
+{% else %}
+style="background-image: url({{ festival.featured_image.url }});"
+{% endif %}
+{% endblock %}
 
 {% block content %}
 
