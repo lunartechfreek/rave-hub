@@ -230,11 +230,6 @@ p {
     font-weight: 500;
 }
 
-.artist-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .artist-checkboxes .checkbox {
     width: 50%;
 }
