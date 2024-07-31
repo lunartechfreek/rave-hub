@@ -494,16 +494,6 @@ p {
     list-style-type: none;
 }
 
-.modal-backdrop.show {
-    opacity: 0;
-    z-index: 1000;
-}
-
-.modal-content {
-    z-index: 3000;
-    margin-top: 90%;
-}
-
 /************************** User Profile */
 
 .second-heading {
