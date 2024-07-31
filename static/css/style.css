@@ -295,7 +295,7 @@ p {
     color: #fff;
     font-size: 65px;
     margin-bottom: -12px;
-    margin-right: 10px;
+    margin-right: 5px;
     text-align: right;
 }
 
@@ -303,10 +303,12 @@ p {
     color: #fff;
     margin-bottom: 20px;
     text-align: right;
+    margin-right: 5px;
 }
 
 .search-div {
     margin-bottom: 20px;
+    margin-right: 5px;
 }
 
 /************************** Slick Slider */
@@ -596,7 +598,6 @@ footer {
     /* Hero Box */
     .hero-box > h1 {
         font-size: 80px;
-        margin-right: 0;
     }
 
     /* Map */
@@ -608,6 +609,19 @@ footer {
 }
 
 @media (min-width: 768px) {
+    /* Hero Box */
+    .hero-box > h1 {
+        margin-right: 0;
+    }
+
+    .search-div {
+        margin-right: 0;
+    }
+
+    .hero-box > h3 {
+        margin-right: 0;
+    }
+
     /* Index */
     .page-header {
         font-size: 45px;
