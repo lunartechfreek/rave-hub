@@ -499,6 +499,16 @@ p {
     list-style-type: none;
 }
 
+.modal-backdrop.show {
+    opacity: 0;
+    z-index: 1000;
+}
+
+.modal-content {
+    z-index: 3000;
+    margin-top: 90%;
+}
+
 /************************** User Profile */
 
 .second-heading {
@@ -606,6 +616,11 @@ footer {
         width: 50vw;
         margin: 30px auto;
     }
+
+    /* Modal */
+    .modal-content {
+        margin-top: 40%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -633,11 +648,6 @@ footer {
         width: 50%;
         left: 25%;
     }
-
-    /* Footer */
-    /* footer {
-        margin-top: 20px;
-    } */
 
     .footer-icon {
         font-size: 35px;
