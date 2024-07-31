@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ user.username }}{% endblock title %}
 {% block heading %}{{ user.username }}{% endblock heading %}
@@ -6,43 +7,95 @@
 
 {% block content %}
 <div class="container">
-    <h1>Events By {{ user.username }}</h1>
-    {% if request.user == user %}
-    <h2>Approved Events</h2>
-    {% endif %}
     <div class="row">
-        {% if approved_festivals %}
-        {% for festival in approved_festivals %}
-        <div>
-            <h3>
-                <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
-            </h3>
-            <p>
-                {{ festival.date }}
-            </p>
+        <div class="col-12 mt-2">
+            <h2 class="page-header">Events By {{ user.username }}</h2>
         </div>
-        {% endfor %}
-        {% else %}
-            <p>No festivals found!</p>
-        {% endif %}
     </div>
     {% if request.user == user %}
-        
-        {% if pending_festivals %}
-        <h2>Pending Events</h2>
-        {% for festival in pending_festivals %}
-            <div>
-                <h3>
-                    <a href="{% url 'festival_detail' id=festival.id %}">{{ festival.name }}</a>
-                </h3>
-                <p>
-                    {{ festival.date }}
-                </p>
+    <h2 class="second-heading">Approved Events</h2>
+    {% endif %}
+    {% if approved_festivals %}
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="row">
+                {% for festival in approved_festivals %}
+                <div class="col-md-3">
+                    <div class="card mb-3 card-container event-slide fade-link">
+                        <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in festival.featured_image.url %}
+                                    <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                        alt="{{ festival.title }}">
+                                    {% endif %}
+                                </div>
+                                <h2 class="card-title">{{ festival.name }}</h2>
+                                <hr />
+                                <p class="card-text h6">{{ festival.date }}</p>
+                                <p class="card-text h6">Genres:
+                                    {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %},
+                                    {% endif %}{% endfor %}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
             </div>
-        {% endfor %}
-        {% else %}
-            <p>No pending festivals found.</p>
-        {% endif %}
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if request.user == user %}
+    {% if pending_festivals %}
+    <div class="mt-5">
+        <h2 class="second-heading">Pending Events</h2>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="row">
+                {% for festival in pending_festivals %}
+                <div class="col-md-3">
+                    <div class="card mb-3 card-container event-slide fade-link">
+                        <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if "placeholder" in festival.featured_image.url %}
+                                    <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                        alt="placeholder image">
+                                    {% else %}
+                                    <img class="festival-image" src="{{ festival.featured_image.url }}"
+                                        alt="{{ festival.title }}">
+                                    {% endif %}
+                                </div>
+                                <h2 class="card-title">{{ festival.name }}</h2>
+                                <hr />
+                                <p class="card-text h6">{{ festival.date }}</p>
+                                <p class="card-text h6">Genres:
+                                    {% for genre in festival.get_genres %}{{ genre }}{% if not forloop.last %},
+                                    {% endif %}{% endfor %}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>No pending festivals found.</p>
+    {% endif %}
     {% endif %}
 </div>
 {% endblock %}
