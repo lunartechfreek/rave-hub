@@ -290,6 +290,7 @@ p {
     margin-bottom: -12px;
     margin-right: 5px;
     text-align: right;
+    text-shadow: 2px 2px 2px #020c0e;
 }
 
 .hero-box > h3 {
@@ -297,6 +298,7 @@ p {
     margin-bottom: 20px;
     text-align: right;
     margin-right: 5px;
+    text-shadow: 2px 2px 2px #020c0e;
 }
 
 .search-div {
