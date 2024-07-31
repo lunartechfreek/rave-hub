@@ -32,7 +32,7 @@
                             <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
                                 <h2 class="card-title">{{ festival.name }}</h2>
                             </a>
-                            <hr/>
+                            <hr>
                             <p class="card-text h6">{{ festival.date }}</p>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                 {% endif %}
                             </div>
                             <h2 class="card-title">{{ festival.name }}</h2>
-                            <hr />
+                            <hr>
                             <p class="card-text h6">{{ festival.date }}</p>
                         </div>
                     </a>
@@ -141,7 +141,7 @@
 {% endblock %}
 
 {% block js %}
-<script type="text/javascript">
+<script>
     $(document).ready(function () {
         $('.multiple-items').slick({
             infinite: true,
