@@ -19,13 +19,13 @@
         <div class="col-12 mt-2">
             <div class="row">
                 {% for festival in festivals %}
-                <div class="col-md-3">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card mb-3 card-container event-slide fade-link">
                         <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in festival.featured_image.url %}
-                                    <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                    <img class="festival-image" src="{% static 'images/default.jpg' %}"
                                         alt="placeholder image">
                                     {% else %}
                                     <img class="festival-image" src="{{ festival.featured_image.url }}"
