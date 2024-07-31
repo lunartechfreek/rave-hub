@@ -306,6 +306,11 @@ p {
     margin-right: 5px;
 }
 
+#search-form {
+    position: relative;
+    z-index: 2;
+}
+
 /************************** Slick Slider */
 
 /* Arrows */
