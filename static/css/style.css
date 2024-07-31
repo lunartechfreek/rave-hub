@@ -716,3 +716,8 @@ footer {
 
     
 }
+
+#search-form {
+    position: relative;
+    z-index: 2;
+}
