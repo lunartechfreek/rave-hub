@@ -71,6 +71,11 @@
 
 {% block js %}
 <script>
+    let today = new Date();
+    today.setDate(today.getDate() + 1);
+    let tomorrow = today.toISOString().split("T")[0];
+    $("#id_date").attr("min", tomorrow);
+
     document.getElementById('add-festival-form').addEventListener('submit', function (event) {
         const urlField = document.querySelector('input[name="website"]');
         if (urlField) {
