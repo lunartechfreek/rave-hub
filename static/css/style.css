@@ -26,7 +26,7 @@ body {
 
 .content-box {
     width: fit-content;
-    padding: 10px 20px;
+    padding: 20px;
     margin-top: 15px;
     /* margin-bottom: 10px; */
     font-size: 1.3rem;
@@ -99,6 +99,14 @@ p {
     border-radius: 15px;
 }
 
+.link {
+    color: #919396;
+}
+
+.link:hover {
+    color: #fff;
+}
+
 /*********************************** Background Images */
 .index-bg {
     background-image: url('../images/festival-image-5.jpg');
@@ -120,9 +128,13 @@ p {
     background-image: url('../images/festival-image-8.jpg');
 }
 
+.festival-detail-bg {
+    background-image: url('../images/festival-image-8.jpg');
+}
+
 
 /*********************************** Buttons */
-button {
+.btn, button {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -162,6 +174,14 @@ button {
 
 .profile-dropdown-btn:focus {
     color: rgba(255, 255, 255, .75);
+}
+
+.artist-btn {
+    margin-bottom: 1rem;
+}
+
+.btn-margin {
+    margin: 0 20px;
 }
 
 
@@ -303,7 +323,6 @@ button {
 
 .card {
     border: none;
-    /* background-color: transparent; */
 }
 
 .image-container {
@@ -354,11 +373,7 @@ button {
     left: 0;
 }
 
-/************************** Home */
-
-.content-box > h2 {
-    margin-top: 12px;
-}
+/************************** Index */
 
 .content-box > h3 {
     margin-top: 25px;
@@ -417,24 +432,35 @@ button {
     margin-bottom: 20px;
 }
 
-#map {
+.map {
     height: 25vh;
+    width: 50vw;
     margin-bottom: 30px;
 }
 
 /************************** Edit Festival */
 
 .form-group > a {
-    text-decoration: underline;
-    color: #fff;
+    color: #919396;
 }
 
 .form-group > a:hover {
-    color: #919396;
+    color: #fff;
 }
 
 .checked {
     background-color: #919396;
+}
+
+/************************** Festival Detail */
+.artist-box {
+    color: #020c0e;
+    margin-top: -15px;
+    margin-bottom: 1rem;
+}
+
+.artist-box > ul {
+    list-style-type: none;
 }
 
 /************************** Messages */
