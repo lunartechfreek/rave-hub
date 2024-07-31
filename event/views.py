@@ -51,7 +51,13 @@ def festival_detail(request, id):
     festival = get_object_or_404(Festival, id=id)
     # Ensures duplicate genres are not displayed
     genres = {artist.genre.name for artist in festival.artists.all()}
-    return render(request, 'event/festival_detail.html', {'festival': festival, 'genres': genres})
+    # return render(request, 'event/festival_detail.html', {'festival': festival, 'genres': genres})
+    context = {
+        'festival': festival,
+        'genres': genres,
+        'is_festival_detail': True,
+    }
+    return render(request, 'event/festival_detail.html', context)
 
 
 @login_required
