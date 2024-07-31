@@ -62,10 +62,6 @@ def festival_detail(request, id):
 
 @login_required
 def add_festival(request):
-    if request.user != festival.event_manager:
-        messages.error(request, 'Please Login To Add A Festival.')
-        return redirect('festival_detail', id=festival.id)
-
     if request.method == 'POST':
         form = FestivalForm(request.POST, request.FILES)
         if form.is_valid():
