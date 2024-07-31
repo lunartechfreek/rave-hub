@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ user.username }}{% endblock title %}
-{% block heading %}{{ user.username }}{% endblock heading %}
+{% block title %}{{ event_manager.username }}{% endblock title %}
+{% block heading %}{{ event_manager.username }}{% endblock heading %}
 {% block background_class %}user-profile-bg{% endblock background_class %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-12 mt-2">
-            <h2 class="page-header">Events By {{ user.username }}</h2>
+            <h2 class="page-header">Events By {{ event_manager.username }}</h2>
         </div>
     </div>
-    {% if request.user == user %}
+    {% if request.user == event_manager %}
     <h2 class="second-heading">Approved Events</h2>
     {% endif %}
     {% if approved_festivals %}
@@ -53,7 +53,7 @@
     </div>
     {% endif %}
 
-    {% if request.user == user %}
+    {% if request.user == event_manager %}
     {% if pending_festivals %}
     <div class="mt-5">
         <h2 class="second-heading">Pending Events</h2>
