@@ -7,6 +7,10 @@
 
 /*********************************** General Styles */
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     height: 100%;
     overflow-x: hidden;
@@ -462,7 +466,7 @@ p {
 
 .map {
     height: 30vh;
-    width: 50vw;
+    width: 70vw;
     margin: 30px auto;
 
 }
@@ -588,8 +592,16 @@ footer {
 }
 
 @media (min-width: 500px) {
+    /* Hero Box */
     .hero-box > h1 {
         font-size: 80px;
+    }
+
+    /* Map */
+    .map {
+        height: 30vh;
+        width: 50vw;
+        margin: 30px auto;
     }
 }
 
