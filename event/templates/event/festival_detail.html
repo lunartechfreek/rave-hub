@@ -8,40 +8,51 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12 mt-2">
-            <h2>{{ festival.name }}</h2>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-12 mt-4">
-            <p>Event Manager: 
-                <a href="{% url 'user_profile' user_id=festival.event_manager.id %}">
-                    {{ festival.event_manager.username }}
-                </a>
-            </p>
-            <p>Artists: 
-                {% for artist in festival.artists.all %}
-                {{ artist.name }}{% if not forloop.last %},
-                {% endif %}
-                {% endfor %}</p>
-            <p>Genres:
-                {% for genre in genres %}
-                {{ genre }}{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            </p>
-            <p>Date: {{ festival.date }}</p>
-            <p>Time: {{ festival.time }}</p>
-            <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
-            <p>Location: {{ festival.location_name }}</p>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="content-box fade-bg">
+                    <p>Event Manager:
+                        <a class="link" href="{% url 'user_profile' user_id=festival.event_manager.id %}">
+                            {{ festival.event_manager.username }}
+                        </a>
+                    </p>
+                    <p>Genres:
+                        {% for genre in genres %}
+                        {{ genre }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p>Date: {{ festival.date }}</p>
+                    <p>Time: {{ festival.time }}</p>
 
-            <!-- Leaflet Map to select festival location -->
-            <div id="map"></div>
+                    <!-- Artists collapse button -->
+                    <a class="btn light-btn artist-btn" data-bs-toggle="collapse" href="#artists-{{ festival.id }}" role="button"
+                        aria-expanded="false" aria-controls="artists-{{ festival.id }}">
+                        Artists <i class="fa fa-arrow-down"></i>
+                    </a>
+                    <!-- Artists collapse content -->
+                    <div class="collapse mt-2" id="artists-{{ festival.id }}">
+                        <div class="card card-body artist-box">
+                            <ul>
+                                {% for artist in festival.artists.all %}
+                                <li>{{ artist.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
 
-            <!-- <a href="{% url 'edit_festival' festival.id %}">Edit</a> -->
-            {% if user == festival.event_manager %}
-            <a href="{% url 'edit_festival' festival.id %}" class="btn btn-dark">Edit</a>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-            {% endif %}
+                    <p>Website: <a class="link" href="{{ festival.website }}">{{ festival.website }}</a></p>
+                    <p>Location: {{ festival.location_name }}</p>
+
+                    <!-- Leaflet Map to select festival location -->
+                    <div id="map" class="map"></div>
+
+                    <!-- <a href="{% url 'edit_festival' festival.id %}">Edit</a> -->
+                    {% if user == festival.event_manager %}
+                    <a href="{% url 'edit_festival' festival.id %}" class="btn light-btn btn-margin">Edit</a>
+                    <button class="btn light-btn btn-margin" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
