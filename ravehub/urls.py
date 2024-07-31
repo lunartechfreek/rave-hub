@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from allauth.account.views import PasswordChangeView
+from .views import handler404, handler500
 
 
 urlpatterns = [
@@ -27,3 +28,6 @@ urlpatterns = [
     path("", include("event.urls"), name="event-urls"),
     path('', include('information.urls')),
 ]
+
+handler404 = "ravehub.views.handler404"
+handler500 = "ravehub.views.handler500"
