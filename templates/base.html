@@ -16,7 +16,7 @@
 <head>
     <title>{% block title %}Rave/Hub{% endblock title %}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,10 +42,10 @@
     <!-- Slick -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
         integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -152,7 +152,7 @@
         {% if not is_index %}mt-4{% endif %}">
             <div class="col-auto">
                 <!-- Search Form -->
-                <form method="GET" action="{% url 'festival_search' %}">
+                <form id="search-form" method="GET" action="{% url 'festival_search' %}">
                     <input type="text" name="q" placeholder="Search festivals, genres, artists..."
                         value="{{ request.GET.q }}">
                     <button type="submit" class="btn btn-dark search-btn">Search</button>
