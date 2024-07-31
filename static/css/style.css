@@ -533,6 +533,24 @@ span[style*="color"] {
     padding-left: 0;
 }
 
+.signup > .errorlist {
+    color: #FF0505;
+}
+
+/************************** Login */
+
+.login > .errorlist {
+    padding-left: 0;
+    color: #FF0505;
+}
+
+/************************** Change Password */
+
+.account-box > form > .errorlist {
+    padding-left: 0;
+    color: #FF0505;
+}
+
 /************************** Messages */
 .message-box {
     margin-top: 65px;
