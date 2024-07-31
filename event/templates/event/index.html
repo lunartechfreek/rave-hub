@@ -10,16 +10,7 @@
 
 <!-- index.html content starts here -->
 <div class="container">
-    <!-- <div class="row justify-content-end">
-        <div class="col-auto">
 
-            <form method="GET" action="{% url 'festival_search' %}">
-                <input type="text" name="q" placeholder="Search festivals, genres, artists..."
-                    value="{{ request.GET.q }}">
-                <button type="submit" class="btn btn-dark search-btn">Search</button>
-            </form>
-        </div>
-    </div> -->
 
 
 
@@ -133,7 +124,7 @@
                 {% else %}
                 <div class="content-box fade-bg">
                     <h3 id="login-false">It looks like you are not logged in!</h3>
-                    <a href="{% url 'account_signup' %}">
+                    <a href="{% url 'account_login' %}">
                         <h4>Click Here To Login</h4>
                     </a>
                     <a href="{% url 'account_signup' %}">
@@ -163,21 +154,25 @@
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         infinite: true,
-                        dots: true
+                        dots: true,
                     }
                 },
                 {
-                    breakpoint: 530,
+                    breakpoint: 580,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        arrows: false
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        infinite: true,
+                        arrows: false
                     }
                 },
             ]
