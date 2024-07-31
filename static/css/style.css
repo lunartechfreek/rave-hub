@@ -128,8 +128,8 @@ p {
     background-image: url('../images/festival-image-8.jpg');
 }
 
-.festival-detail-bg {
-    background-image: url('../images/festival-image-8.jpg');
+.user-profile-bg {
+    background-image: url('../images/festival-image-1.jpeg');
 }
 
 
@@ -461,6 +461,13 @@ p {
 
 .artist-box > ul {
     list-style-type: none;
+}
+
+/************************** User Profile */
+
+.second-heading {
+    color: #fff;
+    margin-top: 20px;
 }
 
 /************************** Messages */
