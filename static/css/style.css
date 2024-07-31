@@ -20,7 +20,7 @@ body {
     padding: 5px 0;
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .content-box {
@@ -50,7 +50,7 @@ h2, h3, h4, h5, h6 {
 
 .page-header {
     color: #fff;
-    font-size: 45px;
+    font-size: 35px;
 }
 
 /* Secondary Text */
@@ -95,6 +95,7 @@ p {
     padding: 5px;
     color: #fff;
     border-radius: 15px;
+    text-align: center;
 }
 
 .link {
@@ -288,17 +289,19 @@ p {
 .hero-box > h1 {
     margin-top: 60vh;
     color: #fff;
-    font-size: 100px;
+    font-size: 65px;
     margin-bottom: -12px;
+    text-align: right;
 }
 
 .hero-box > h3 {
     color: #fff;
     margin-bottom: 20px;
+    text-align: right;
 }
 
 .search-div {
-    margin-bottom: -20px;
+    margin-bottom: 20px;
 }
 
 /************************** Slick Slider */
@@ -571,30 +574,61 @@ span[style*="color"] {
 
 /************************** Footer */
 footer {
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 .footer-icon {
     color: #FCFBEF;
-    font-size: 40px;
-    margin: 5px 100px;
+    font-size: 30px;
+    margin: 5px 30px;
 }
 
 .footer-icon:hover {
     color: #919396;
 }
 
+@media (min-width: 500px) {
+    .hero-box > h1 {
+        font-size: 80px;
+    }
+}
+
 @media (min-width: 768px) {
+    /* Index */
+    .page-header {
+        font-size: 45px;
+    }
+
     /* Messages */
     .message-box {
         margin-top: 80px;
         width: 50%;
         left: 25%;
     }
+
+    /* Footer */
+    /* footer {
+        margin-top: 20px;
+    } */
+
+    .footer-icon {
+        font-size: 35px;
+        margin: 5px 60px;
+    }
 }
 
 
 @media (min-width: 992px) {
+    /* Hero Box */
+    .hero-box > h1 {
+        font-size: 100px;
+    }
+
+    /* Search */
+    .search-div {
+        margin-bottom: -20px;
+    }
+
     /* Navbar */
     .navbar-collapse {
         display: flex;
@@ -630,6 +664,16 @@ footer {
 
     .profile-dropdown-menu {
         transform: translate3d(-108px, 58px, 0px) !important;
+    }
+
+    /* Footer */
+    /* footer {
+        margin-top: 120px;
+    } */
+
+    .footer-icon {
+        font-size: 40px;
+        margin: 5px 100px;
     }
 
     
