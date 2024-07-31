@@ -52,7 +52,11 @@
 
 </head>
 
+{% if is_festival_detail %}
+<body style="background-image: url('{{ festival.featured_image.url }}');">
+{% else %}
 <body class="d-flex flex-column {% block background_class %}{% endblock %}">
+{% endif %}
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
