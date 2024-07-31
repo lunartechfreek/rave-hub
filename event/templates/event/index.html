@@ -75,7 +75,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in festival.featured_image.url %}
-                                <img class="festival-image" src="{% static 'images/default.webp' %}"
+                                <img class="festival-image" src="{% static 'images/default.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
                                 <img class="festival-image" src="{{ festival.featured_image.url }}"
