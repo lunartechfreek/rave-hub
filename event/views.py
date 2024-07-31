@@ -157,12 +157,12 @@ def festival_search(request):
 
 
 def user_profile(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    festivals = Festival.objects.filter(event_manager=user)
+    event_manager = get_object_or_404(User, id=user_id)
+    festivals = Festival.objects.filter(event_manager=event_manager)
     approved_festivals = festivals.filter(approved=True)
     pending_festivals = festivals.filter(approved=False)
     return render(request, 'event/user_profile.html', {
-        'user': user,
+        'event_manager': event_manager,
         'approved_festivals': approved_festivals,
         'pending_festivals': pending_festivals
     })
