@@ -13,17 +13,6 @@
             <h2 class="page-header">Upcoming Festivals</h2>
         </div>
     </div>
-
-    <!-- <div class="row">
-        <div class="col-12 mt-4">
-            {% for festival in festivals %}
-            <h3>
-                <a href="{% url 'festival_detail' festival.id %}">{{ festival.name }}</a> - {{ festival.date }}
-            </h3>
-            {% endfor %}
-        </div>
-    </div> -->
-
     {% if festivals %}
     <div class="row">
         <div class="col-12 mt-2">
@@ -52,25 +41,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- <div class="card-container event-slide fade-link">
-                    <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in festival.featured_image.url %}
-                                <img class="festival-image" src="{% static 'images/default.webp' %}"
-                                    alt="placeholder image">
-                                {% else %}
-                                <img class="festival-image" src="{{ festival.featured_image.url }}"
-                                    alt="{{ festival.title }}">
-                                {% endif %}
-                            </div>
-                            <h2 class="card-title">{{ festival.name }}</h2>
-                            <hr />
-                            <p class="card-text h6">{{ festival.date }}</p>
-                        </div>
-                    </a>
-                </div> -->
                 {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row">
