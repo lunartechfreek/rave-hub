@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rave/Hub{% endblock title %}
+{% block heading %}Rave/Hub{% endblock heading %}
+{% block background_class %}index-bg{% endblock background_class %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-5 py-md-5">
+        <div class="col-12 text-center">
+            <h2 class="text-danger">Uh-oh! Our server's having a bigger meltdown than the British weather.</h2>
+            <br>
+            <p class="fs-4">
+                Something went wrong on our end. We're on it like a festival-goer chasing a rumour about surprise guest appearances.
+            </p>
+            <p>
+                <a href="{% url 'home' %}" class="btn btn-lg btn-success m-1">Home</a>
+                <a href="{% url 'festival_list' %}" class="btn btn-lg btn-warning m-1">Festivals</a>
+                <a href="{% url 'contact_us' %}" class="btn btn-lg btn-info m-1">Contact</a>
+            </p>
+            <p>
+                <small class="text-danger fw-bold fs-6">ERROR: 500</small>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
