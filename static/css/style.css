@@ -132,6 +132,10 @@ p {
     background-image: url('../images/festival-image-1.jpeg');
 }
 
+.about-bg {
+    background-image: url('../images/festival-image-11.jpg');
+}
+
 
 /*********************************** Buttons */
 .btn, button {
@@ -468,6 +472,15 @@ p {
 .second-heading {
     color: #fff;
     margin-top: 20px;
+}
+
+/************************** User Profile */
+.content-box > p {
+    margin-top: 15px;
+}
+
+span[style*="color"] {
+    color: #fff !important;
 }
 
 /************************** Messages */
