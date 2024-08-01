@@ -572,6 +572,11 @@ span[style*="color"] {
     color: #FF0505;
 }
 
+.account-box > form > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 /************************** Messages */
 .message-box {
     margin-top: 65px;
