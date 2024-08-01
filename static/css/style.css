@@ -590,6 +590,21 @@ span[style*="color"] {
     left: 10%;
 }
 
+/************************** Error Pages */
+.error-box {
+    width: fit-content;
+    padding: 20px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.error-box > h3 {
+    margin-top: 25px;
+}
+
 /************************** Footer */
 footer {
     margin-top: 80px;
@@ -721,4 +736,9 @@ footer {
         margin-top: 70px;
     }
 
+    /* Error Pages */
+    .error-box {
+        margin-top: 70px;
+    }
+    
 }
