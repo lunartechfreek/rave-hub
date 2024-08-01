@@ -525,7 +525,7 @@ span[style*="color"] {
 
 .contact-box {
     padding: 25px;
-    margin-top: 70px;
+    margin-top: 15px;
     font-size: 1.3rem;
     text-align: left;
     color: #fff;
@@ -710,10 +710,9 @@ footer {
         margin: 5px 100px;
     }
 
-    
-}
+    /* Contact */
+    .contact-box {
+        margin-top: 70px;
+    }
 
-#search-form {
-    position: relative;
-    z-index: 2;
 }
