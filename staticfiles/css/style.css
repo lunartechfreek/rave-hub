@@ -23,8 +23,6 @@ body {
 .content {
     padding: 5px 0;
     position: relative;
-    z-index: 1;
-    /* min-height: 100vh; */
 }
 
 .content-box {
@@ -232,9 +230,10 @@ p {
     font-weight: 500;
 }
 
-.artist-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
+.dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #919396;
 }
 
 .artist-checkboxes .checkbox {
@@ -297,6 +296,7 @@ p {
     margin-bottom: -12px;
     margin-right: 5px;
     text-align: right;
+    text-shadow: 2px 2px 2px #020c0e;
 }
 
 .hero-box > h3 {
@@ -304,11 +304,17 @@ p {
     margin-bottom: 20px;
     text-align: right;
     margin-right: 5px;
+    text-shadow: 2px 2px 2px #020c0e;
 }
 
 .search-div {
     margin-bottom: 20px;
     margin-right: 5px;
+}
+
+#search-form {
+    position: relative;
+    z-index: 2;
 }
 
 /************************** Slick Slider */
@@ -499,16 +505,6 @@ p {
     list-style-type: none;
 }
 
-.modal-backdrop.show {
-    opacity: 0;
-    z-index: 1000;
-}
-
-.modal-content {
-    z-index: 3000;
-    margin-top: 90%;
-}
-
 /************************** User Profile */
 
 .second-heading {
@@ -529,7 +525,7 @@ span[style*="color"] {
 
 .contact-box {
     padding: 25px;
-    margin-top: 70px;
+    margin-top: 15px;
     font-size: 1.3rem;
     text-align: left;
     color: #fff;
@@ -541,7 +537,7 @@ span[style*="color"] {
 .account-box {
     width: fit-content;
     padding: 30px;
-    margin-top: 70px;
+    margin-top: 15px;
     font-size: 1.3rem;
     text-align: left;
     color: #fff;
@@ -576,6 +572,11 @@ span[style*="color"] {
     color: #FF0505;
 }
 
+.account-box > form > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 /************************** Messages */
 .message-box {
     margin-top: 65px;
@@ -587,6 +588,21 @@ span[style*="color"] {
     position: absolute;
     width: 80%;
     left: 10%;
+}
+
+/************************** Error Pages */
+.error-box {
+    width: fit-content;
+    padding: 20px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.error-box > h3 {
+    margin-top: 25px;
 }
 
 /************************** Footer */
@@ -613,7 +629,7 @@ footer {
     /* Map */
     .map {
         height: 30vh;
-        width: 50vw;
+        width: 100%;
         margin: 30px auto;
     }
 
@@ -705,14 +721,24 @@ footer {
     }
 
     /* Footer */
-    /* footer {
-        margin-top: 120px;
-    } */
-
     .footer-icon {
         font-size: 40px;
         margin: 5px 100px;
     }
 
+    /* Contact */
+    .contact-box {
+        margin-top: 70px;
+    }
+
+    /* Account Pages */
+    .account-box {
+        margin-top: 70px;
+    }
+
+    /* Error Pages */
+    .error-box {
+        margin-top: 70px;
+    }
     
 }
