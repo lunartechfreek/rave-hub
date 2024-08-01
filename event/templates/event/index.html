@@ -10,52 +10,6 @@
 
 <!-- index.html content starts here -->
 <div class="container">
-
-
-
-
-
-    <!-- Events Column -->
-    <!-- <div class="col-12 mt-2">
-            <div class="row">
-                {% for festival in festival_list %}
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in festival.featured_image.url %}
-                                <img class="festival-image" src="{% static 'images/default.webp' %}" alt="placeholder image">
-                                {% else %}
-                                <img class="festival-image" src="{{ festival.featured_image.url }}" alt="{{ festival.title }}">
-                                {% endif %}
-                            </div>
-                            <a href="{% url 'festival_detail' festival.id %}" class="festival-link">
-                                <h2 class="card-title">{{ festival.name }}</h2>
-                            </a>
-                            <hr>
-                            <p class="card-text h6">{{ festival.date }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:4 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %} -->
-
     <div class="row">
         <div class="col-12 mt-2">
             <h2 class="page-header">Upcoming Events</h2>
