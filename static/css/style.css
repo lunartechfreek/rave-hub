@@ -230,6 +230,12 @@ p {
     font-weight: 500;
 }
 
+.dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #919396;
+}
+
 .artist-checkboxes .checkbox {
     width: 50%;
 }
