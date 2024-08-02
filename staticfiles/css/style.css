@@ -53,6 +53,7 @@ h2, h3, h4, h5, h6 {
 .page-header {
     color: #fff;
     font-size: 35px;
+    text-shadow: 3px 3px 2px #020c0e;
 }
 
 /* Secondary Text */
@@ -296,7 +297,7 @@ p {
     margin-bottom: -12px;
     margin-right: 5px;
     text-align: right;
-    text-shadow: 2px 2px 2px #020c0e;
+    text-shadow: 6px 6px 3px #020c0e;
 }
 
 .hero-box > h3 {
