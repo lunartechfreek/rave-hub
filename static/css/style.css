@@ -535,6 +535,11 @@ p {
     margin-bottom: 20px !important;
 }
 
+.updated-on {
+    text-shadow: 3px 3px 3px #020c0e;
+
+}
+
 /************************** Contact Us */
 
 .contact-box {
