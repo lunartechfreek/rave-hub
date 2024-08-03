@@ -30,6 +30,7 @@ class FestivalForm(forms.ModelForm):
             'longitude': forms.HiddenInput(),
         }
 
+    # Clean up URL entered by the user
     def clean_website(self):
         website = self.cleaned_data.get('website')        
         if website:

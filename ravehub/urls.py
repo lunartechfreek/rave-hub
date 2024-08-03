@@ -19,7 +19,7 @@ from django.urls import path, include
 from allauth.account.views import PasswordChangeView
 from .views import handler404, handler500
 
-
+#URL patterns for project
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('accounts/password/change/', PasswordChangeView.as_view(), name='account_change_password'),
