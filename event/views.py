@@ -11,6 +11,21 @@ from .forms import FestivalForm
 
 
 class FestivalList(generic.ListView):
+    """
+    Returns all published Festivals in :model:`event.Festival`
+    and displays them in a page of six events. 
+
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`event.Festival`
+    ``paginate_by``
+        Number of posts per page.
+        
+    **Template:**
+
+    :template:`event/index.html`
+    """
     model = Festival
     template_name = "event/index.html"
     paginate_by = 6
@@ -25,8 +40,26 @@ class FestivalList(generic.ListView):
 
 
 def festival_list(request):
+    """
+    Returns all published Festivals in :model:`event.Festival`
+    and displays them in a page of eight events. 
+
+    **Context**
+
+    ``festivals``
+        All published instances of :model:`event.Festival`
+    ``paginator``
+        Number of posts per page.
+    ``page``
+        Retrieve the 'page' parameter from the GET request.
+    ``context``
+        Create a context dictionary for rendering the template.
+
+    **Template:**
+
+    :template:`event/festival_list.html`
+    """
     festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
-    
     
     paginator = Paginator(festivals, 8)
 
@@ -48,6 +81,21 @@ def festival_list(request):
 
 
 def festival_detail(request, id):
+    """
+    Display an individual :model:`event.Festival`
+
+    **Context**
+
+    ``festival``
+        An instance of :model:`event.Festival`
+    ``genres``
+        Create a set of genre names from all artists in the festival.
+
+        
+    **Template:**
+
+    :template:`event/festival_detail.html`
+    """
     festival = get_object_or_404(Festival, id=id)
     # Ensures duplicate genres are not displayed
     genres = {artist.genre.name for artist in festival.artists.all()}
@@ -57,6 +105,20 @@ def festival_detail(request, id):
 
 @login_required
 def add_festival(request):
+    """
+    Handle the add festival form.
+
+    **Context**
+
+    ``form``
+        Initiate the form with POST data and file uploads.
+    ``festival``
+        Creates a festival instance from the form data.
+
+    **Template:**
+
+    :template:`event/add_festival.html`
+    """
     if request.method == 'POST':
         form = FestivalForm(request.POST, request.FILES)
         if form.is_valid():
@@ -77,6 +139,20 @@ def add_festival(request):
 
 @login_required
 def edit_festival(request, id):
+    """
+    Handle the editing of an event.
+
+    **Context**
+
+    ``festival`` 
+        An instance of :model:`event.Festival`
+    ``form``
+        Initiate the form with POST data and file uploads.
+
+    **Template:**
+
+    :template:`event/add_festival.html`
+    """
     festival = get_object_or_404(Festival, id=id, event_manager=request.user)
 
     if request.user != festival.event_manager:
@@ -100,6 +176,18 @@ def edit_festival(request, id):
 
 @login_required
 def delete_festival(request, id):
+    """
+    Handle the deletion of an event.
+
+    **Context**
+
+    ``festival`` 
+        An instance of :model:`event.Festival`
+
+    **Template:**
+
+    :template:`event/festival_detail.html`
+    """
     festival = get_object_or_404(Festival, id=id)
 
     if request.user != festival.event_manager:
@@ -115,6 +203,27 @@ def delete_festival(request, id):
 
 
 def festival_search(request):
+    """
+    Handle the search for events.
+
+    **Context**
+
+    ``query``
+        Retrieve the value of the 'q' query parameter from the GET request.
+    ``festivals`` 
+        Retrieves all Festival instances from :model:`event.Festival 
+        that are approved
+    ``page``
+        Retrieves the page parameter from the url
+    ``paginator``
+        creates a new page if there are more than 8 events
+    ``context``
+        Create a context dictionary for rendering the template.
+
+    **Template:**
+
+    :template:`event/festival_search.html`
+    """
     query = request.GET.get('q')
     festivals = Festival.objects.filter(approved=True)
 
@@ -148,6 +257,25 @@ def festival_search(request):
 
 
 def user_profile(request, user_id):
+    """
+    Handle the search for events.
+
+    **Context**
+
+    ``event_manager``
+        Retrieve an instance of :model:`auth.User`.
+    ``festivals`` 
+        Retrieves all Festival instances of :model:`event.Festival 
+        that have been added by the logged in user.
+    ``approved_festivals``
+        Retrieves all festivals that are approved.
+    ``pending_festivals``
+        Retrieves all festivals that are not approved.
+
+    **Template:**
+
+    :template:`event/user_profile.html`
+    """
     event_manager = get_object_or_404(User, id=user_id)
     festivals = Festival.objects.filter(event_manager=event_manager)
     approved_festivals = festivals.filter(approved=True)
