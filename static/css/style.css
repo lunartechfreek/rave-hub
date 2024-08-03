@@ -638,10 +638,6 @@ footer {
         margin: 30px auto;
     }
 
-    /* Modal */
-    .modal-content {
-        margin-top: 40%;
-    }
 }
 
 @media (min-width: 768px) {
