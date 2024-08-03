@@ -515,7 +515,17 @@ p {
 }
 
 /************************** About */
-.content-box > p {
+.about-box {
+    width: fit-content;
+    padding: 20px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.about-box > p {
     margin-top: 15px;
 }
 
@@ -725,6 +735,11 @@ footer {
     .footer-icon {
         font-size: 40px;
         margin: 5px 100px;
+    }
+
+    /* About */
+    .about-box {
+        margin-top: 70px;
     }
 
     /* Contact */
