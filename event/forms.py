@@ -3,6 +3,10 @@ from .models import Festival, Artist
 
 
 class FestivalForm(forms.ModelForm):
+    """
+    A form for creating and updating Festival instances.
+    """
+
     artists = forms.ModelMultipleChoiceField(
         queryset = Artist.objects.order_by('name'),
         widget = forms.CheckboxSelectMultiple(attrs={"class": "artist-checkboxes"}),
