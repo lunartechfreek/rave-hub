@@ -31,9 +31,11 @@ I used [Coolors](https://coolors.co/ffffff-373f47-25292e-020c0e) to design my 
 The colours I chose were a white for the font colour and then different shades of greys and black for the other colours. I changed the opacity of the boxes containing the content so that you could still slightly see the image in the background, but so that you could clearly read the text. The opacity of the hover links was also done in this way so that users would see an adjustment when the item was hovered over.
 
 - `#FFFFF` White used for primary text.
-- `#373F47` Charcoal used for 
-- `#25292E` - Gunmetal used for 
-- `#020C0E` - Rich Black used for 
+- `#919396` Battleship Grey used for hover font colour
+- `#FF0505` Red used for error pages
+- `#373F47` Charcoal used for hover background colour
+- `#25292E` - Gunmetal used for footer
+- `#020C0E` - Rich Black used for nav bar and various other elements
 
 Here is a link to my [colour palette](https://coolors.co/ffffff-373f47-25292e-020c0e).
 
