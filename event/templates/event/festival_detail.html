@@ -4,6 +4,7 @@
 {% block title %}{{ festival.name }}{% endblock title %}
 {% block heading %}{{ festival.name }}{% endblock heading %}
 
+<!-- Displays user uploaded image as background -->
 {% block body %}
 {% if "placeholder" in festival.featured_image.url %}
 style="background-image: url({% static 'images/default.jpg' %});"
@@ -13,7 +14,7 @@ style="background-image: url({{ festival.featured_image.url }});"
 {% endblock %}
 
 {% block content %}
-
+<!-- Festival detail content-->
 <div class="container">
     <div class="row">
         <div class="col-12 mt-4">
@@ -54,7 +55,6 @@ style="background-image: url({{ festival.featured_image.url }});"
                     <!-- Leaflet Map to select festival location -->
                     <div id="map" class="map"></div>
 
-                    <!-- <a href="{% url 'edit_festival' festival.id %}">Edit</a> -->
                     {% if user == festival.event_manager %}
                     <a href="{% url 'edit_festival' festival.id %}" class="btn light-btn btn-margin">Edit</a>
                     <button class="btn light-btn btn-margin" type="button" data-bs-toggle="modal"
