@@ -2,6 +2,9 @@ from django.db import models
 
 
 class About(models.Model):
+    """
+    A model for the about information.
+    """
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -13,6 +16,9 @@ class About(models.Model):
 
 
 class ContactUs(models.Model):
+    """
+    A model for the contact us form.
+    """
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()

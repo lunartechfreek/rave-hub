@@ -5,12 +5,36 @@ from .forms import ContactUsForm
 
 
 def about_us(request):
+    """
+    Returns the text from :model:`information.About`. 
+
+    **Context**
+
+    ``about``
+        Returns the text from the about field in :model:`information.About`.
+        
+    **Template:**
+
+    :template:`event/about.html`
+    """
     about = About.objects.all().order_by('-updated_on').first()
 
     return render(request, "information/about.html", {"about": about})
 
 
 def contact_us(request):
+    """
+    Handles the contact form submission. 
+
+    **Context**
+
+    ``form``
+        Initiate the form with POST data.
+        
+    **Template:**
+
+    :template:`event/about.html`
+    """
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():

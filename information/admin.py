@@ -4,6 +4,9 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
+    """
+    Admin interface configuration for the about model.
+    """
 
     summernote_fields = ('content',)
     list_display = ('content', 'updated_on')
@@ -11,6 +14,10 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin):
+    """
+    Admin interface configuration for the recieved messages
+    from users.
+    """
     list_display = ('name', 'email', 'message', 'read')
     list_filter = ('read',)
     actions = ['mark_as_read']
