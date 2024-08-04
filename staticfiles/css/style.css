@@ -609,6 +609,11 @@ p {
     left: 10%;
 }
 
+.error-message {
+    background-color: #FF0505;
+    color: #fff;
+}
+
 /************************** Error Pages */
 .error-box {
     width: fit-content;
