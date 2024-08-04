@@ -830,3 +830,54 @@ You can fork this repository by using the following steps:
 
 There were no major differences that I found between the Gitpod site and the live deployed Heroku site.
 
+## Credits
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Chat GPT](https://openai.com/index/chatgpt/) | entire site | Used throughout the site for help and debugging with various things such as: |
+| | event/forms.py | Datepicker widget, clean_website method |
+| | event/views.py | @login_required, how to save ManyToManyField, the use of context to render the page, the use of query for the search bar, pagination |
+| | festival_list.html | Displaying pagination page number |
+| | add_festival.html, edit_festival.html | How to stop users from entering date in the past |
+| | models.py | get_genres method, the use of verbose_name_plurus to change how the fields were displayed in admin panel |
+| [W3Schools](https://www.w3schools.com/django/ref_lookups_gte.php) | event/views.py | Displaying the events |
+| [Django Documentation](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/) | event/forms.py  | Artist checkboxes widget |
+| [Bootstrap Documentation](https://getbootstrap.com/docs/4.0/components/modal/) | edit_festival.html | Delete festival modal |
+| [Leaflet](https://leafletjs.com/examples.html) | add_festival.html, edit_festival.html, festival_detail.html | Leaflet map tutorial |
+| [YouTube](https://www.youtube.com/watch?v=_Z_1ELEnrlM) | index.html | Slick Slider tutorial |
+| [Slick Slider](https://kenwheeler.github.io/slick/) | index.html | Guide on how to use Slick Slider |
+| [strftime](https://strftime.org) | CRUD functionality | Tool to format date/time from string |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | Hosting static files on Heroku temporarily |
+
+
+### Media
+
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Fonticon](https://gauger.io/fonticon/ ) | Entire Site | Image | Favicon on all pages |
+| [Travel and Leisure Asia](https://www.travelandleisureasia.com/in/news/tomorrowland-thailand-to-come-to-bangkok-this-2026/) | User Profile | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/official-tomorrowland-flag-8bjkkoutztk20yow.html ) | Add Festival | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-the-story-of-planaxis-j0wz8uj64fwd4dzn.html ) | Contact Us | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-partying-crowd-czck61v54s1diwdx.html ) | Sign Up | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-world-s-best-music-festival-zsflruvqvikakp39.html ) | Home | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-dj-booth-shot-p47x24rpn7eh5e3j.html ) | Festival Searh | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-enchanting-stage-0i3rl6s17p1slkgi.html ) | Festival List | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-the-book-tz1njoohitwwuhqm.html ) | Edit Festival | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-the-circus-rwvlx7esm8punaxr.html ) | Login | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-electronic-party-21049qj2gq7pl2yr.html ) | Logout | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-prehistoric-scene-0r1tsmca8at1xoe4.html ) | About | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-orange-fireworks-rbp0oh1ghcurgpnq.html) | Password Change | Image | Background image |
+| [Mr Wallpaper](https://mrwallpaper.com/wallpapers/tomorrowland-magical-world-aqcm7rj5kzkcirzh.html ) | Placeholder | Image | Background image |
+
+
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support.
+- I would like to thank my partner Charlotte, for believing in me, and allowing me to make this transition into software development.
