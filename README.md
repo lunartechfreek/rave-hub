@@ -516,6 +516,8 @@ In the future there are a few other features that I would like to add to the web
     - For the users to be able to leave comments on the festival detail page. This would help users engage with other users and also to speak directly to the event owner who could also comment back to them.
 - Add Other Artists
     - For the event owner to be able to add artists to the database that are not currently on there.
+- Lighthouse Accessibility
+    - As a future devolpment I would change the way that the festival detail background image is displayed so as to avoid it causing an error in the lighthouse report. 
 
 ## Tools & Technologies Used
 
