@@ -14,57 +14,63 @@
                 <h2>Edit Festival</h2>
                 <form id="edit-festival-form" method="post" action="{% url 'edit_festival' festival.id %}"
                     enctype="multipart/form-data" novalidate>
-                {% csrf_token %}
-                <div class="form-group">
-                    {{ form.name.label_tag }}
-                    {{ form.name }}
-                </div>
-
-                <div class="form-group artist-checkboxes">
-                    <p>Artists:</p>
-                    <div class="scrollable-checkboxes">
-                        {% for artist in form.artists %}
-                        <div class="checkbox">{{ artist }}</div>
-                        {% endfor %}
+                    {% csrf_token %}
+                    <!-- Error Message -->
+                    {% for error in form.errors %}
+                    <div class="alert alert-danger error-message">
+                        Please fill in {{ error }} field!
                     </div>
-                </div>
+                    {% endfor %}
+                    <div class="form-group">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                    </div>
 
-                <div class="form-group">
-                    {{ form.website.label_tag }}
-                    {{ form.website }}
-                </div>
+                    <div class="form-group artist-checkboxes">
+                        <p>Artists:</p>
+                        <div class="scrollable-checkboxes">
+                            {% for artist in form.artists %}
+                            <div class="checkbox">{{ artist }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    {{ form.featured_image.label_tag }}
-                    {{ form.featured_image }}
-                </div>
+                    <div class="form-group">
+                        {{ form.website.label_tag }}
+                        {{ form.website }}
+                    </div>
 
-                <div class="form-group">
-                    {{ form.date.label_tag }}
-                    {{ form.date }}
-                </div>
+                    <div class="form-group">
+                        {{ form.featured_image.label_tag }}
+                        {{ form.featured_image }}
+                    </div>
 
-                <div class="form-group">
-                    {{ form.time.label_tag }}
-                    {{ form.time }}
-                </div>
+                    <div class="form-group">
+                        {{ form.date.label_tag }}
+                        {{ form.date }}
+                    </div>
 
-                <div class="form-group">
-                    {{ form.location_name.label_tag }}
-                    {{ form.location_name }}
-                </div>
+                    <div class="form-group">
+                        {{ form.time.label_tag }}
+                        {{ form.time }}
+                    </div>
 
-                <!-- Hidden Map Inputs -->
-                {{ form.latitude }}
-                {{ form.longitude }}
-                
-                <!-- Leaflet Map to select festival location -->
-                <div id="map" class="map"></div>
+                    <div class="form-group">
+                        {{ form.location_name.label_tag }}
+                        {{ form.location_name }}
+                    </div>
 
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn light-btn mb-4">Submit</button>
-                </div>
-            </form>
+                    <!-- Hidden Map Inputs -->
+                    {{ form.latitude }}
+                    {{ form.longitude }}
+
+                    <!-- Leaflet Map to select festival location -->
+                    <div id="map" class="map"></div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn light-btn mb-4">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -99,7 +105,10 @@
     }
     let map = L.map("map", {
         // stops users from loading infinite tiles outside of the UK
-        maxBounds: [[49.56099, -9.119201], [61.17188, 2.79249]],
+        maxBounds: [
+            [49.56099, -9.119201],
+            [61.17188, 2.79249]
+        ],
         maxBoundsViscosity: 0.5,
     }).setView([origLat, origLng], 6);
     let mapTileLayers = L.tileLayer(`http://{s}.tile.osm.org/{z}/{x}/{y}.png`, {
@@ -108,12 +117,14 @@
         minZoom: 5,
     }).addTo(map);
 
-    let marker = L.marker([origLat, origLng], {draggable: true}).addTo(map);
+    let marker = L.marker([origLat, origLng], {
+        draggable: true
+    }).addTo(map);
     // prefill lat/lng values on map-click or marker-drag
-    marker.on("dragend", function(e) {
+    marker.on("dragend", function (e) {
         updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
     });
-    map.on("click", function(e) {
+    map.on("click", function (e) {
         marker.setLatLng(e.latlng);
         updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
     });
