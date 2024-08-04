@@ -4,10 +4,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/lunartechfreek/rave-hub)](https://github.com/lunartechfreek/rave-hub/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/lunartechfreek/rave-hub)](https://github.com/lunartechfreek/rave-hub)
 
-
 ![screenshot](documentation/mockup.png)
-
-source: [amiresponsive](https://ui.dev/amiresponsive?url=https://rave-hub-1d478d1cfdde.herokuapp.com)
 
 Rave/Hub is a website made for educational purposes for my fourth portfolio project in software development that I am studying with the Code Institute. The website is aimed at users who are looking for upcoming festivals that they might like to attend. 
 
@@ -41,12 +38,9 @@ Here is a link to my [colour palette](https://coolors.co/ffffff-373f47-25292e-02
 
 ![screenshot](documentation/coolors.png)
 
-
-
-
 #### Contrast Grid
 
-I used [Contrast Grid Eight Shapes](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%20%0D%0A%23373F47%0D%0A%2325292E%0D%0A%23020C0E&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) to check all of my colours for accessibility against each other.
+I used [Contrast Grid Eight Shapes](https://contrast-grid.eightshapes.com/) to check all of my colours for accessibility against each other.
 
 ![screenshot](documentation/contrast-grid.png)
 
@@ -262,3 +256,246 @@ Sign Up
 
 </details>
 
+## Features
+
+### Existing Features
+
+- Logo
+
+    -  The logo is fixed on the navigation bar on the far left so the user always knows which website that they are on and that they aren’t being redirected to any other sites when browsing. The logo is also a link back to the home page when clicked for easy navigation for users. 
+
+![screenshot](documentation/features/logo.png)
+
+- Navigation Bar
+
+    -  The navigation bar is fixed at the top of the page and consists of the logo, page links, and the account menu. The links have hover and active classes applied to them and light up when hovered over or the user is on that page. This is so the user always knows what page they are on. 
+
+    ![screenshot](documentation/features/nav-bar.png)
+
+    - The navigation bar is fully responsive and collapses into a hamburger menu on screens with a width below 768px so as to not be cluttered with links at the top on smaller screen sizes.
+
+    ![screenshot](documentation/features/hamburger-menu.png)
+
+- Dropdown Menu
+
+    -  On screens with a width below 768px when the hamburger menu is clicked the links are displayed neatly in a drop down menu instead. 
+
+![screenshot](documentation/features/dropdown-menu.png)
+
+- Account Menu
+
+    -  The account menu is fixed on to the navigation bar at the top of the screen and features links related to the users account such as their profile, login, logout, sign up and change password. The links displayed are dependant on whether the user is logged in or not.
+
+    Logged In
+
+    ![screenshot](documentation/features/account-menu.png)
+
+    Logged Out
+
+    ![screenshot](documentation/features/account-menu-logged-out.png)
+
+- Dynamic Page Title
+
+    -  The page title is displayed at the top of every page but is pushed down the page so as to show a lot of the background image when the page is first loaded so it almost acts like a hero image as well as a background image. With the background constantly changing colours behind it I used a text shadow to make the letters pop a bit and also for better accessibility.
+
+
+![screenshot](documentation/features/dynamic-title.png)
+
+- Search Bar
+
+    -  There is a search bar at the top of the page so the user can search for festivals by searching either the title, genre, or artists. I added this to every page to allow for easy navigation.
+
+![screenshot](documentation/features/search-bar.png)
+
+- Dynamic Background
+
+    -  The background is changed for every page through use of classes and template tags. On the festival detail page it is dynamically changed to whatever image the user uploaded for the festival. If no image was uploaded then it would be filled by a placeholder image instead. The background is static and only the content scrolls. 
+
+![screenshot](documentation/features/dynamic-background.png)
+
+- Footer
+
+    -  The footer sits at the bottom of every page and contains links to the companies social media accounts. When these are clicked they are opened in a new window to avoid taking the user away from the website. 
+
+![screenshot](documentation/features/footer.png)
+
+- Carousel
+
+    -  The carousel was added using [Slick Slider](https://kenwheeler.github.io/slick/). It displays 6 festivals using pagination in order of date. On larger devices there are navigation arrows and also dots representing the page at the bottom. Both the arrows and dots have a hover class on them to change colour when hovered over. The dots also have an active class on them to display what page the user is on. The cards themselves are fully clickable as a link to the festival detail page and when hovered over the opacity gets darker to show this. 
+
+![screenshot](documentation/features/carousel.png)
+
+- Welcome
+
+    -  There is a welcome section at the bottom of the home page with links to help new event owners add a website. The links shown depend on the users login status.
+
+    Logged In
+
+    ![screenshot](documentation/features/welcome.png)
+
+    Logged Out
+
+    ![screenshot](documentation/features/welcome-logged-out.png)
+
+- Add Festival Form
+
+    -  The add festival form contains fields for name. Artists, website, image, date, time, location and a map picker. The website URL is cleaned up in the backend to add ‘https://' dynamically. 
+
+![screenshot](documentation/features/add-festival-form.png)
+
+- Artist Scroll Box
+
+    -  The artist field in the add festival form is displayed as a scrollable box so that if there are a lot of artists it does not clutter the page. 
+
+![screenshot](documentation/features/artist-scroll.png)
+
+- Calender Widget
+
+    -  I used a widget to display the calendar so it is more visually pleasing to the user. Users can not add a festival for a past date due to the handling of this in the back end so past dates are not clickable and are greyed out in the widget. 
+
+![screenshot](documentation/features/calender-widget.png)
+
+- Time Slot Widget
+
+    -  I used a widget to display the time slots in a scrollable dropdown menu.
+
+![screenshot](documentation/features/time-slots.png)
+
+- Map Location Picker
+
+    -  I used [Leaflet](https://leafletjs.com/index.html) to add a field for a map picker tool. I did this so that event owners can physically show users exactly where the festival is located. 
+
+![screenshot](documentation/features/map-picker.png)
+
+- Festival Details
+
+    -  The festival details are displayed on a dynamically created page using the id. It displays all of the information entered by the event owner when adding an event. It also has a link to the event owners profile page where they can view other events listed by them. 
+
+![screenshot](documentation/features/festival-details.png)
+
+- Artist Dropdown
+
+    -  On the festival detail page I decided to display the artists in a collapsible box so that if there are a lot of artists listed it will not clutter the page. 
+
+![screenshot](documentation/features/artist-dropdown.png)
+
+- Map Marker
+
+    -  On the festival detail page the marker that shows the location on the map dynamically displays the name of the festival.
+
+![screenshot](documentation/features/map-marker.png)
+
+- Edit/Delete Buttons
+
+    -  On the festival detail page there are edit and delete buttons that are only displayed to the user that added the event. 
+
+![screenshot](documentation/features/edit-delete-btns.png)
+
+- Pre Populate Edit Page
+
+    -  On the edit festival page it is pre populated with the data that is already in the database from when the event was added. 
+
+![screenshot](documentation/features/edit-populate.png)
+
+- Delete Modal
+
+    -  When the event owner chooses to delete an event, a modal appears asking them if to confirm. This was done to make sure the user defiantly wants to delete it and it wasn’t just clicked by mistake.
+
+![screenshot](documentation/features/delete-modal.png)
+
+- Event Cards
+
+    -  On the all festivals and the festival search page I displayed the events on cards so as to stand out from the colourful background. The cards themselves are fully clickable as a link to the festival detail page and when hovered over the opacity gets darker to show this. 
+
+![screenshot](documentation/features/event-cards.png)
+
+- Pagination Buttons
+
+    -  When there are over 8 events on the all festivals and festival search page pagination is used to dynamically create pages for the other events. This was done so that not too many festivals were shown at once and helps create a more user friendly website. When the other pages are created the pagination buttons appear at the bottom of the screen. 
+
+![screenshot](documentation/features/pagination-btns.png)
+
+- Approved/Pending Events
+
+    -  If the event owner goes on their profile page they will be able to see their events that they have uploaded split into approved and pending sections. This is so that they can still edit the events that haven’t been approved yet before waiting for approval incase they needed to change it. 
+
+    ![screenshot](documentation/features/approved-events.png)
+    ![screenshot](documentation/features/pending-events.png)
+
+- Placeholder Image
+
+    -  If a user does not upload a festival image a placeholder is used instead. 
+
+![screenshot](documentation/features/placeholder.png)
+
+- Search Results
+
+    -  When a user makes a search query using the search bar the results are displayed on a new page with a dynamic heading returning the string of the query searched. 
+
+![screenshot](documentation/features/search-results.png)
+
+- About
+
+    -  The about section is fully editable by the site owner so that they can update the about text whenever they like.
+
+![screenshot](documentation/features/about.png)
+
+- Updated On
+
+    -  On the about page it displays to the user when the about text was last edited so that can see how up to date it is. 
+
+![screenshot](documentation/features/updated-on.png)
+
+- Contact Form
+
+    -  The contact form is a way for a user to contact the site owner and ask any questions they have. This was done using a contact form. The site owner will then be able to view the users query in the admin panel. 
+
+![screenshot](documentation/features/contact-form.png)
+
+- User Profile
+
+    -  Each user has a profile page that is created dynamically. This is filled with all the events that they so that the user can attend other events hosted by that event owner. 
+
+![screenshot](documentation/features/user-profile.png)
+
+- Messages
+
+    -  When a user performs certain actions such as logs in or out, or adds an event for example, a message is displayed at the top to confirm their action was successful. If it wasn’t an error message is displayed instead. 
+
+![screenshot](documentation/features/messages.png)
+
+- Sign Up
+
+    -  There is a sign up page for users to create an account. 
+
+![screenshot](documentation/features/sign-up.png)
+
+- Login
+
+    -  There is a login page for users to login. 
+
+![screenshot](documentation/features/login.png)
+
+- Logout
+
+    -  There is a logout page confirming that the user defiantly wants to logout.
+
+![screenshot](documentation/features/logout.png)
+
+- Change Password
+
+    -  There is a change password page for users that want to change their password.
+
+![screenshot](documentation/features/change-password.png)
+
+- 404 Error Page
+
+    -  There is a 404 error page incase users enter a wrong URL. There are buttons on this page to easily navigate them back to the site. 
+
+![screenshot](documentation/features/404-page.png)
+
+- 500 Error Page
+
+    -  There is a 404 error page and there are buttons on this page to easily navigate them back to the site. 
+
+![screenshot](documentation/features/500-page.png)
