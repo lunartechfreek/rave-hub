@@ -545,6 +545,10 @@ In the future there are a few other features that I would like to add to the web
 - [![Coolors](https://img.shields.io/badge/Coolors%20-grey)](https://coolors.co/ffffff-919396-ff0505-373f47-25292e-020c0e) Used to generate my colour palette.
 - [![Contrast Grid Eight Shapes](https://img.shields.io/badge/Contrast%20Grid%20Eight%20Shapes%20-grey)](https://contrast-grid.eightshapes.com/) Used to generate contrast grid.
 - [![Google Fonts](https://img.shields.io/badge/Google%20Fonts%20-grey)](https://fonts.google.com/) Used for fonts.
+- [Am I Responsive?](https://ui.dev/amiresponsive) used to generate preview imagery of the responsive design used throughout the website.
+- [BrowserStack](https://www.browserstack.com/) used to emmulate different devices and browsers to test my website on.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) used to check my responsive design and to run my lighthouse report. 
+
 
 
 ## Database Design
@@ -860,7 +864,6 @@ There were no major differences that I found between the Gitpod site and the liv
 
 
 ### Media
-
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
