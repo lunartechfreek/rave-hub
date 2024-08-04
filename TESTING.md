@@ -111,3 +111,26 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Microsoft Surface Pro 7 | ![Microsoft Surface Pro 7](documentation/responsiveness/surface-pro-7-dev.png) | Works as expected | Chrome DevTools test |
 
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Index | ![screenshot](documentation/lighthouse/desktop-index.png) | ![screenshot](documentation/lighthouse/mobile-index.png) |  |
+| Add Festival | ![screenshot](documentation/lighthouse/desktop-add-festival.png) | ![screenshot](documentation/lighthouse/mobile-add-festival.png) |  |
+| Edit Festival | ![screenshot](documentation/lighthouse/desktop-edit-festival.png) | ![screenshot](documentation/lighthouse/mobile-edit-festival.png) | ![screenshot](documentation/lighthouse/contrast-error.png)I think that the error is being caused by the fact that this is the only page that renders the background as the image that the user has uploaded. I have manually checked the contrast of the text items as is shown below and the accessibility is passing. This is something that will be listed as a future devolpment to look further into ![screenshot](documentation/lighthouse/contrast1.png) ![screenshot](documentation/lighthouse/contrast2.png) |
+| Festival Detail | ![screenshot](documentation/lighthouse/desktop-festival-detail.png) | ![screenshot](documentation/lighthouse/mobile-festival-detail.png) |  |
+| Festival List | ![screenshot](documentation/lighthouse/desktop-festival-list.png) | ![screenshot](documentation/lighthouse/mobile-festival-list.png) |  |
+| Festival Search | ![screenshot](documentation/lighthouse/desktop-festival-search.png) | ![screenshot](documentation/lighthouse/mobile-festival-search.png) |  |
+| User Profile | ![screenshot](documentation/lighthouse/desktop-user-profile.png) | ![screenshot](documentation/lighthouse/mobile-user-profile.png) |  |
+| About | ![screenshot](documentation/lighthouse/desktop-about.png) | ![screenshot](documentation/lighthouse/mobile-about.png) |  |
+| Contact | ![screenshot](documentation/lighthouse/desktop-contact-us.png) | ![screenshot](documentation/lighthouse/mobile-contact-us.png) |  |
+| Login | ![screenshot](documentation/lighthouse/desktop-login.png) | ![screenshot](documentation/lighthouse/mobile-login.png) |  |
+| Sign Up | ![screenshot](documentation/lighthouse/desktop-signup.png) | ![screenshot](documentation/lighthouse/mobile-signup.png) |  |
+| Logout | ![screenshot](documentation/lighthouse/desktop-logout.png) | ![screenshot](documentation/lighthouse/mobile-logout.png) |  |
+| Password Change | ![screenshot](documentation/lighthouse/desktop-password-change.png) | ![screenshot](documentation/lighthouse/mobile-password-change.png) |  |
+| 404 | ![screenshot](documentation/lighthouse/desktop-404.png) | ![screenshot](documentation/lighthouse/mobile-404.png) |  |
+| 505 | ![screenshot](documentation/lighthouse/desktop-500.png) | ![screenshot](documentation/lighthouse/mobile-500.png) |  |
+
+
