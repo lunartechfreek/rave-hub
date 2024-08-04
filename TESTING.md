@@ -180,3 +180,34 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Site Owner: Approve events | ![screenshot](documentation/approved.png) |
 | Site Owner: Have a contact us section | ![screenshot](documentation/features/contact-form.png) |
 
+## Bugs
+
+### Fixed Bugs
+
+- Time field not working correctly on add/edit festival form
+
+    ![screenshot](documentation/bugs/time-bug1.png)
+    ![screenshot](documentation/bugs/time-bug2.png)
+    ![screenshot](documentation/bugs/time-bug3.png)
+
+    - To fix this, I changed from TimeField to a CharField and also made custom time slots to populate it.
+
+- Artist selection from add/edit festival form was not saving when it got to admin panel for approval
+
+    ![screenshot](documentation/bugs/save-m2m.png)
+
+    - To fix this, I added the line `form.save_m2m()` to the add/edit festival views.
+
+- URL not being accepted by add/edit festival form
+
+    ![screenshot](documentation/bugs/URL-bug.png)
+
+    - To fix this, I added the `clean_website(self)` to my FestivalForme.
+
+- Genres not appearing in festival search results
+
+    ![screenshot](documentation/bugs/search-genre.png)
+
+    - To fix this, I add the get_genre method to the model.
+
+> There are no remaining bugs that I am aware of.
