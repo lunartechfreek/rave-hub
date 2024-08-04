@@ -16,6 +16,7 @@
                     enctype="multipart/form-data" novalidate>
                     {% csrf_token %}
                     {% for error in form.errors %}
+                    <!-- Error Message -->
                     <div class="alert alert-danger error-message">
                         Please fill in {{ error }} field!
                     </div>
