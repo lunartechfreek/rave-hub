@@ -56,3 +56,58 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | ravehub | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lunartechfreek/rave-hub/main/ravehub/urls.py) | ![screenshot](documentation/validation/ravehub-urls.png) | Passed with no errors |
 | ravehub | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lunartechfreek/rave-hub/main/ravehub/views.py) | ![screenshot](documentation/validation/ravehub-views.png) | Passed with no errors |
 
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+### Browser Testing
+
+| Browser | Home | Notes |
+| --- | --- | --- |
+| Chrome | ![Chrome Browser](documentation/browser-testing/browser-chrome.png) | Works as expected |
+| Edge | ![Edge Browser](documentation/browser-testing/browser-edge.png) | Works as expected |
+| Firefox | ![Firefox Browser](documentation/browser-testing/browser-firefox.png) | Works as expected |
+| Opera | ![Opera Browser](documentation/browser-testing/browser-opera.png) | Works as expected |
+| Safari | ![Safari Browser](documentation/browser-testing/browser-safari.png) | Works as expected |
+
+### Device Browser Testing
+
+| Device | Browser | Home | Notes |
+| --- | --- | --- | --- |
+| Iphone 15 ProMax | Safari | ![Iphone 15 ProMax](documentation/device-testing/mobile-iphone-15-promax-safari.PNG) | Works as expected - Manual test |
+| Iphone 13 ProMax | Safari | ![Iphone 13 ProMax](documentation/responsiveness/mobile-iphone-13-promax-safari.png) | Works as expected |
+| Iphone 12 Pro | Chrome | ![Iphone 12 Pro](documentation/device-testing/mobile-iphone-12-pro-chrome.png) | Works as expected |
+| Samsung Galaxy S22 Ultra | Chrome | ![Samsung Galaxy S22 Ultra](documentation/device-testing/mobile-samsung-galaxy-s22-ultra-chrome.png) | Works as expected - Manual test |
+| Google Pixel 8 Pro | Edge | ![Pixel 8 Pro](documentation/device-testing/mobile-google-pixel-8-pro-edge.png) | Works as expected |
+| Google Pixel 7 | Chrome | ![Pixel 7](documentation/device-testing/mobile-google-pixel-7-chrome.png) | Works as expected |
+| Huawei P30 | Chrome | ![Huawei P30](documentation/device-testing/mobile-huawei-p30-chrome.png) | Works as expected |
+| Samsung Tab S7 | Firefox | ![Samsung Tab 7](documentation/device-testing/tablet-samsung-tab-s7-firefox.png) | Works as expected |
+| Ipad 10th Gen | Safari | ![Ipad 10th Gen](documentation/responsiveness/tablet-ipad-10-safari.png) | Works as expected |
+
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | Home | Notes | Test |
+| --- | --- | --- | --- |
+| Iphone 15 ProMax | ![Iphone 15 ProMax](documentation/responsiveness/iphone-15-promax-safari.PNG) | Works as expected | Manual test |
+| Iphone 13 ProMax | ![Iphone 13 ProMax](documentation/responsiveness/mobile-iphone-13-promax-safari.png) | Works as expected | Browserstack test |
+| Iphone 12 Pro | ![Iphone 12 Pro](documentation/responsiveness/iphone-12-pro-chrome.png) | Works as expected | Browserstack test |
+| Iphone SE | ![Iphone SE](documentation/responsiveness/iphone-se-dev.png) | Works as expected | Chrome DevTools test |
+| Iphone XR | ![Iphone XR](documentation/responsiveness/iphone-xr-dev.png) | Works as expected | Chrome DevTools test |
+| Samsung Galaxy S22 Ultra | ![Samsung Galaxy S22 Ultra](documentation/responsiveness/mobile-samsung-galaxy-s22-ultra-chrome.png) | Works as expected | Manual test |
+| Google Pixel 8 Pro | ![Pixel 8 Pro](documentation/responsiveness/mobile-google-pixel-8-pro-edge.png) | Works as expected | Browserstack test |
+| Google Pixel 7 | ![Pixel 7](documentation/responsiveness/mobile-google-pixel-7-chrome.png) | Works as expected | Browserstack test |
+| Samsung Galaxy Z Fold 5 | ![Galaxy Z](documentation/responsiveness/galaxy-z-dev.png) | Works as expected | Chrome DevTools test |
+| Samsung Galaxy S8+ | ![Samsung Galaxy S8+](documentation/responsiveness/galaxy-s8-dev.png) | Works as expected | Chrome DevTools test |
+| Samsung Galaxy S20 Ultra | ![Samsung Galaxy S20 Ultra](documentation/responsiveness/galaxy-s20-ultra-dev.png) | Works as expected | Chrome DevTools test |
+| Samsung Galaxy A51/71 | ![Samsung Galaxy A51/71](documentation/responsiveness/galaxy-a51-71-dev.png) | Works as expected | Chrome DevTools test |
+| Huawei P30 | ![Huawei P30](documentation/responsiveness/mobile-huawei-p30-chrome.png) | Works as expected | Browserstack test |
+| Samsung Tab S7 | Firefox | ![Samsung Tab 7](documentation/responsiveness/tablet-samsung-tab-s7-firefox.png) | Works as expected |
+| Ipad 10th Gen | ![Ipad 10th Gen](documentation/responsiveness/tablet-ipad-10-safari.png) | Works as expected | Browserstack test |
+| Ipad Air | ![Ipad Air](documentation/responsiveness/ipad-air-dev.png) | Works as expected | Chrome DevTools test |
+| Ipad Mini | ![Ipad Mini](documentation/responsiveness/ipad-mini-dev.png) | Works as expected | Chrome DevTools test |
+| Microsoft Surface Duo | ![Microsoft Surface Duo](documentation/responsiveness/surface-duo-dev.png) | Works as expected | Chrome DevTools test |
+| Microsoft Surface Pro 7 | ![Microsoft Surface Pro 7](documentation/responsiveness/surface-pro-7-dev.png) | Works as expected | Chrome DevTools test |
+
+
