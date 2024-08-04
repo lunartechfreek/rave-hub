@@ -15,9 +15,13 @@
                 <form id="add-festival-form" method="post" action="{% url 'add_festival' %}"
                     enctype="multipart/form-data" novalidate>
                     {% csrf_token %}
+                    {% for error in form.errors %}
+                    <div class="alert alert-danger error-message">Please fill in {{ error }} field!</div>
+                    {% endfor %}
                     <div class="form-group">
                         {{ form.name.label_tag }}
                         {{ form.name }}
+
                     </div>
 
                     <div class="form-group artist-checkboxes">
@@ -99,7 +103,10 @@
     }
     let map = L.map("map", {
         // stops users from loading infinite tiles outside of the UK
-        maxBounds: [[49.56099, -9.119201], [61.17188, 2.79249]],
+        maxBounds: [
+            [49.56099, -9.119201],
+            [61.17188, 2.79249]
+        ],
         maxBoundsViscosity: 0.5,
     }).setView([origLat, origLng], 6);
     let mapTileLayers = L.tileLayer(`http://{s}.tile.osm.org/{z}/{x}/{y}.png`, {
@@ -108,12 +115,14 @@
         minZoom: 5,
     }).addTo(map);
 
-    let marker = L.marker([origLat, origLng], {draggable: true}).addTo(map);
+    let marker = L.marker([origLat, origLng], {
+        draggable: true
+    }).addTo(map);
     // prefill lat/lng values on map-click or marker-drag
-    marker.on("dragend", function(e) {
+    marker.on("dragend", function (e) {
         updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
     });
-    map.on("click", function(e) {
+    map.on("click", function (e) {
         marker.setLatLng(e.latlng);
         updateCoords(marker.getLatLng().lat, marker.getLatLng().lng, map.getZoom());
     });
