@@ -266,6 +266,12 @@ Sign Up
 
 ![screenshot](documentation/features/logo.png)
 
+- Change Password
+
+    -  I chose to add a music note to the favicon to go with the theme of festivals.
+
+![screenshot](documentation/features/favicon.png)
+
 - Navigation Bar
 
     -  The navigation bar is fixed at the top of the page and consists of the logo, page links, and the account menu. The links have hover and active classes applied to them and light up when hovered over or the user is on that page. This is so the user always knows what page they are on. 
