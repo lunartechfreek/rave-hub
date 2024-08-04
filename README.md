@@ -536,3 +536,95 @@ In the future there are a few other features that I would like to add to the web
 - [![Shields.io](https://img.shields.io/badge/Shields%20-grey)](https://shields.io/badges) Used to generate badges.
 - [![Slick Slider](https://img.shields.io/badge/Slick%20Slider-grey)](https://kenwheeler.github.io/slick/) used to create carousel.
 - [![Fonticon](https://img.shields.io/badge/Fonticon%20-grey)](https://gauger.io/fonticon/) Used to generate favicon.
+
+## Database Design
+
+### Event
+
+```python
+class Festival(models.Model):
+    """ 
+    A model for each festival of events. 
+    Related to :model:`auth.Genre`, :model:`auth.User`, 
+    :model:`auth.Artist` and :model:`auth.CloudinaryField`
+    """
+    name = models.CharField(max_length=100, null=False, blank=False)
+    event_manager = models.ForeignKey(User, on_delete=models.CASCADE)
+    artists = models.ManyToManyField(Artist, related_name="festivals")
+    website = models.URLField(max_length=256, blank=True, null=True)
+    featured_image = CloudinaryField('image', default='placeholder')
+    date = models.DateField(null=False, blank=False)
+    time = models.CharField(choices=TIME_SLOTS, null=False, blank=False)
+    location_name = models.CharField(max_length=255, null=False, blank=False)
+    latitude = models.DecimalField(
+        max_digits=9, decimal_places=6, null=False, blank=False)
+    longitude = models.DecimalField(
+        max_digits=9, decimal_places=6, null=False, blank=False)
+    approved = models.BooleanField(default=False)
+
+
+class Genre(models.Model):
+    """ 
+    A model for artist genres (managed by site owner). 
+    """
+    name = models.CharField(max_length=75, null=False, blank=False)
+
+
+class Artist(models.Model):
+    """ 
+    A model for each artist (managed by site owner). 
+    Related to :model:`auth.Genre`
+
+    """
+    name = models.CharField(max_length=100, null=False, blank=False)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+```
+### Information
+
+```python
+class About(models.Model):
+    """
+    A model for the about information.
+    """
+    content = models.TextField()
+    updated_on = models.DateTimeField(auto_now=True)
+
+
+class ContactUs(models.Model):
+    """
+    A model for the contact us form.
+    """
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    message = models.TextField()
+    read = models.BooleanField(default=False)
+```
+
+### My ERD diagram
+
+![screenshot](documentation/ravehub-erd.png)
+
+I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
+
+The steps taken were as follows:
+- In the terminal: `sudo apt update`
+- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
+- then type `Y` to proceed
+- then: `pip3 install django-extensions pygraphviz`
+- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
+```python
+INSTALLED_APPS = [
+    ...
+    'django_extensions',
+    ...
+]
+```
+- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
+- dragged the new `erd.png` file into my `documentation/` folder
+- removed `'django_extensions',` from my `INSTALLED_APPS`
+- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
+
+![erd](documentation/erd.png)
+source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+
+
