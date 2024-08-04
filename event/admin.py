@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Genre, Artist, Festival
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Festival)
 class FestivalAdmin(SummernoteModelAdmin):
     """

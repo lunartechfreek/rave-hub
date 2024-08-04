@@ -8,12 +8,12 @@ from cloudinary.models import CloudinaryField
 # Time slots for time field
 TIME_SLOTS = [
     (datetime.time(hour, 0).strftime("%H:%M"),
-    datetime.time(hour, 0).strftime("%H:%M")) for hour in range(24)]
+        datetime.time(hour, 0).strftime("%H:%M")) for hour in range(24)]
 
 
 class Genre(models.Model):
-    """ 
-    A model for artist genres (managed by site owner). 
+    """
+    A model for artist genres (managed by site owner).
     """
     name = models.CharField(max_length=75, null=False, blank=False)
 
@@ -22,8 +22,8 @@ class Genre(models.Model):
 
 
 class Artist(models.Model):
-    """ 
-    A model for each artist (managed by site owner). 
+    """
+    A model for each artist (managed by site owner).
     Related to :model:`auth.Genre`
 
     """
@@ -35,9 +35,9 @@ class Artist(models.Model):
 
 
 class Festival(models.Model):
-    """ 
-    A model for each festival of events. 
-    Related to :model:`auth.Genre`, :model:`auth.User`, 
+    """
+    A model for each festival of events.
+    Related to :model:`auth.Genre`, :model:`auth.User`,
     :model:`auth.Artist` and :model:`auth.CloudinaryField`
     """
     name = models.CharField(max_length=100, null=False, blank=False)
@@ -53,7 +53,6 @@ class Festival(models.Model):
     longitude = models.DecimalField(
         max_digits=9, decimal_places=6, null=False, blank=False)
     approved = models.BooleanField(default=False)
-    
 
     class Meta:
         ordering = ['date']
@@ -68,15 +67,13 @@ class Festival(models.Model):
             raise ValidationError("The date cannot be in the past.")
 
     def save(self, *args, **kwargs):
-        # Saves the model 
+        # Saves the model
         self.clean()
         super().save(*args, **kwargs)
 
     def get_genres(self):
-        # Returns the genre name 
+        # Returns the genre name
         genres = set()
         for artist in self.artists.all():
             genres.add(artist.genre.name)
         return genres
-
-

@@ -13,7 +13,7 @@ from .forms import FestivalForm
 class FestivalList(generic.ListView):
     """
     Returns all published Festivals in :model:`event.Festival`
-    and displays them in a page of six events. 
+    and displays them in a page of six events.
 
     **Context**
 
@@ -21,7 +21,7 @@ class FestivalList(generic.ListView):
         All published instances of :model:`event.Festival`
     ``paginate_by``
         Number of posts per page.
-        
+
     **Template:**
 
     :template:`event/index.html`
@@ -31,7 +31,8 @@ class FestivalList(generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        return Festival.objects.filter(approved=True, date__gte=timezone.now().date()).order_by('date')
+        return Festival.objects.filter(
+            approved=True, date__gte=timezone.now().date()).order_by('date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -42,7 +43,7 @@ class FestivalList(generic.ListView):
 def festival_list(request):
     """
     Returns all published Festivals in :model:`event.Festival`
-    and displays them in a page of eight events. 
+    and displays them in a page of eight events.
 
     **Context**
 
@@ -59,8 +60,9 @@ def festival_list(request):
 
     :template:`event/festival_list.html`
     """
-    festivals = Festival.objects.filter(date__gte=timezone.now().date(), approved=True).order_by('date')
-    
+    festivals = Festival.objects.filter(
+        date__gte=timezone.now().date(), approved=True).order_by('date')
+
     paginator = Paginator(festivals, 8)
 
     page = request.GET.get('page')
@@ -91,7 +93,7 @@ def festival_detail(request, id):
     ``genres``
         Create a set of genre names from all artists in the festival.
 
-        
+
     **Template:**
 
     :template:`event/festival_detail.html`
@@ -99,8 +101,9 @@ def festival_detail(request, id):
     festival = get_object_or_404(Festival, id=id)
     # Ensures duplicate genres are not displayed
     genres = {artist.genre.name for artist in festival.artists.all()}
-    return render(request, 'event/festival_detail.html', {'festival': festival, 'genres': genres})
-    
+    return render(request, 'event/festival_detail.html', {
+        'festival': festival, 'genres': genres
+        })
 
 
 @login_required
@@ -144,7 +147,7 @@ def edit_festival(request, id):
 
     **Context**
 
-    ``festival`` 
+    ``festival``
         An instance of :model:`event.Festival`
     ``form``
         Initiate the form with POST data and file uploads.
@@ -156,9 +159,11 @@ def edit_festival(request, id):
     festival = get_object_or_404(Festival, id=id, event_manager=request.user)
 
     if request.user != festival.event_manager:
-        messages.error(request, 'You do not have permission to edit this festival.')
+        messages.error(
+            request, 'You do not have permission to edit this festival.'
+            )
         return redirect('festival_detail', id=festival.id)
-    
+
     if request.method == 'POST':
         form = FestivalForm(request.POST, request.FILES, instance=festival)
         if form.is_valid():
@@ -166,12 +171,17 @@ def edit_festival(request, id):
             festival.approved = False
             festival.save()
             form.save_m2m()
-            messages.success(request, 'Festival updated successfully and is awaiting approval.')
+            messages.success(
+                request,
+                'Festival updated successfully and is awaiting approval.'
+                )
             return redirect('festival_detail', id=festival.id)
     else:
         form = FestivalForm(instance=festival)
-    
-    return render(request, 'event/edit_festival.html', {'form': form, 'festival': festival})
+
+    return render(request, 'event/edit_festival.html', {
+            'form': form, 'festival': festival
+            })
 
 
 @login_required
@@ -181,7 +191,7 @@ def delete_festival(request, id):
 
     **Context**
 
-    ``festival`` 
+    ``festival``
         An instance of :model:`event.Festival`
 
     **Template:**
@@ -191,7 +201,9 @@ def delete_festival(request, id):
     festival = get_object_or_404(Festival, id=id)
 
     if request.user != festival.event_manager:
-        messages.error(request, 'You do not have permission to delete this festival.')
+        messages.error(
+            request, 'You do not have permission to delete this festival.'
+                )
         return redirect('festival_detail', id=festival.id)
 
     if request.method == 'POST':
@@ -210,8 +222,8 @@ def festival_search(request):
 
     ``query``
         Retrieve the value of the 'q' query parameter from the GET request.
-    ``festivals`` 
-        Retrieves all Festival instances from :model:`event.Festival 
+    ``festivals``
+        Retrieves all Festival instances from :model:`event.Festival
         that are approved
     ``page``
         Retrieves the page parameter from the url
@@ -226,7 +238,6 @@ def festival_search(request):
     """
     query = request.GET.get('q')
     festivals = Festival.objects.filter(approved=True)
-
 
     if query:
         festivals = festivals.filter(
@@ -264,8 +275,8 @@ def user_profile(request, user_id):
 
     ``event_manager``
         Retrieve an instance of :model:`auth.User`.
-    ``festivals`` 
-        Retrieves all Festival instances of :model:`event.Festival 
+    ``festivals``
+        Retrieves all Festival instances of :model:`event.Festival
         that have been added by the logged in user.
     ``approved_festivals``
         Retrieves all festivals that are approved.

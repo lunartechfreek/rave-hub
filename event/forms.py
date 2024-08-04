@@ -8,23 +8,25 @@ class FestivalForm(forms.ModelForm):
     """
 
     artists = forms.ModelMultipleChoiceField(
-        queryset = Artist.objects.order_by('name'),
-        widget = forms.CheckboxSelectMultiple(attrs={"class": "artist-checkboxes"}),
-        required = True,
+        queryset=Artist.objects.order_by('name'),
+        widget=forms.CheckboxSelectMultiple(attrs={
+            "class": "artist-checkboxes"
+        }),
+        required=True,
     )
 
     class Meta:
         model = Festival
         fields = [
-            'name', 
-            'artists', 
-            'website', 
-            'date', 
-            'time', 
+            'name',
+            'artists',
+            'website',
+            'date',
+            'time',
             'location_name',
-            'latitude', 
+            'latitude',
             'longitude',
-            'featured_image'     
+            'featured_image'
             ]
 
         widgets = {
@@ -36,7 +38,7 @@ class FestivalForm(forms.ModelForm):
 
     # Clean up URL entered by the user
     def clean_website(self):
-        website = self.cleaned_data.get('website')        
+        website = self.cleaned_data.get('website')
         if website:
             if website.startswith('http://'):
                 website = 'https://' + website[7:]
