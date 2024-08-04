@@ -34,7 +34,7 @@ The colours I chose were a white for the font colour and then different shades o
 - `#25292E` - Gunmetal used for footer
 - `#020C0E` - Rich Black used for nav bar and various other elements
 
-Here is a link to my [colour palette](https://coolors.co/ffffff-373f47-25292e-020c0e).
+Here is a link to my [colour palette](https://coolors.co/ffffff-919396-ff0505-373f47-25292e-020c0e).
 
 ![screenshot](documentation/coolors.png)
 
