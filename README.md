@@ -536,6 +536,10 @@ In the future there are a few other features that I would like to add to the web
 - [![Shields.io](https://img.shields.io/badge/Shields%20-grey)](https://shields.io/badges) Used to generate badges.
 - [![Slick Slider](https://img.shields.io/badge/Slick%20Slider-grey)](https://kenwheeler.github.io/slick/) used to create carousel.
 - [![Fonticon](https://img.shields.io/badge/Fonticon%20-grey)](https://gauger.io/fonticon/) Used to generate favicon.
+- [![Coolors](https://img.shields.io/badge/Coolors%20-grey)](https://coolors.co/ffffff-919396-ff0505-373f47-25292e-020c0e) Used to generate my colour palette.
+- [![Contrast Grid Eight Shapes](https://img.shields.io/badge/Contrast%20Grid%20Eight%20Shapes%20-grey)](https://contrast-grid.eightshapes.com/) Used to generate contrast grid.
+- [![Google Fonts](https://img.shields.io/badge/Google%20Fonts%20-grey)](https://fonts.google.com/) Used for fonts.
+
 
 ## Database Design
 
