@@ -134,3 +134,26 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | 505 | ![screenshot](documentation/lighthouse/desktop-500.png) | ![screenshot](documentation/lighthouse/mobile-500.png) |  |
 
 
+## Defensive Programming
+
+| User Action | Expected Result | Pass/Fail | Screenshot |
+| --- | --- | --- | --- |
+| | | | |
+| Logged Out | Account drop down links for logged out | Pass | ![screenshot](documentation/defensive-programming/defence-account-drop-logged-out.png) |
+| Logged in | Account drop down links for logged out | Pass | ![screenshot](documentation/defensive-programming/defence-account-drop.png) |
+| Click delete | Modal Appears | Pass | ![screenshot](documentation/defensive-programming/defence-delete-modal.png) |
+| Not event owner | Can't edit event | Pass | ![screenshot](documentation/defensive-programming/defence-deny-edit-404.png) |
+| Logged out | Can't edit event | Pass | ![screenshot](documentation/defensive-programming/defence-deny-edit.png) |
+| Logged in and event owner | Edit/delete buttons appear | Pass | ![screenshot](documentation/defensive-programming/defence-edit-delete.png) |
+| Logged in | Index link shown | Pass | ![screenshot](documentation/defensive-programming/defence-index-link-logged-in.png) |
+| Logged out | Index links shown | Pass | ![screenshot](documentation/defensive-programming/defence-index-link-logged-out.png) |
+| Logged In | Add festival appears | Pass | ![screenshot](documentation/defensive-programming/defence-navbar-logged-in.png) |
+| Logged Out | Add festival hidden | Pass | ![screenshot](documentation/defensive-programming/defence-navbar-logged-out.png) |
+| Logged in and event owner | Pending festivals appear | Pass | ![screenshot](documentation/defensive-programming/defence-pending.png) |
+| Enter incorrect add festival form | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-add-festival-errors.png) |
+| Enter incorrect change password details | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-change-password-errors.png) |
+| Enter incorrect contact us fields | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-contact-us-errors.png) |
+| Logged Out | Denied access to add festival | Pass | ![screenshot](documentation/defensive-programming/defense-deny-add.png) |
+| Enter incorrect sign in info | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-sign-in-errors.png) |
+| Enter incorrect sign up info | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-sign-up-error.png) |
+
