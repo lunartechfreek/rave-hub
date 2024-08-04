@@ -43,8 +43,6 @@ def contact_us(request):
                 request, 'Your message has been sent successfully!'
                 )
             return redirect('contact_us')
-        else:
-            messages.error(request, 'Please correct the error below.')
     else:
         form = ContactUsForm()
 
