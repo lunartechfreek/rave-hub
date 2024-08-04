@@ -3,12 +3,10 @@ from .models import About, ContactUs
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(About)
-class AboutAdmin(SummernoteModelAdmin):
+class AboutAdmin(admin.ModelAdmin):
     """
     Admin interface configuration for the about model.
     """
-
-    summernote_fields = ('content',)
     list_display = ('content', 'updated_on')
 
 
