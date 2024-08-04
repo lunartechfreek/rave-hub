@@ -157,3 +157,26 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Enter incorrect sign in info | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-sign-in-errors.png) |
 | Enter incorrect sign up info | Error messages appear | Pass | ![screenshot](documentation/defensive-programming/defense-sign-up-error.png) |
 
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| User: Be able to view other events by an event owner | ![screenshot](documentation/features/user-profile.png) |
+| User: Contact the site owner | ![screenshot](documentation/features/contact-form.png) |
+| User: Find site information | ![screenshot](documentation/features/about.png) |
+| User: View event details | ![screenshot](documentation/features/festival-details.png) |
+| User: Search for events | ![screenshot](documentation/features/search-bar.png) |
+| User: View upcoming events | ![screenshot](documentation/features/carousel.png) |
+| Event Owner: Delete Events | ![screenshot](documentation/features/delete-modal.png) |
+| Event Owner: Have a profile page | ![screenshot](documentation/features/user-profile.png) |
+| Event Owner: Change password | ![screenshot](documentation/features/change-password.png) |
+| Event Owner: Create account and login | ![screenshot](documentation/features/sign-up-form.png) |
+| Event Owner: Add event details | ![screenshot](documentation/features/add-festival-form.png) |
+| Event Owner: Edit events | ![screenshot](documentation/features/edit-delete-btns.png) |
+| Event Owner: Add upcoming events | ![screenshot](documentation/features/add-festival-form.png) |
+| Site Owner: Have an about page| ![screenshot](documentation/features/about.png) |
+| Site Owner: Log in to admin panel  | ![screenshot](documentation/admin-panel.png) |
+| Site Owner: Approve events | ![screenshot](documentation/approved.png) |
+| Site Owner: Have a contact us section | ![screenshot](documentation/features/contact-form.png) |
+
