@@ -499,3 +499,14 @@ Sign Up
     -  There is a 404 error page and there are buttons on this page to easily navigate them back to the site. 
 
 ![screenshot](documentation/features/500-page.png)
+
+### Future Features
+
+In the future there are a few other features that I would like to add to the website. These are:
+
+- Log In With Social Media
+    - For the users to be able to log in with their social media accounts so as to make the login process even more simple and quick to do. 
+- Comment Section 
+    - For the users to be able to leave comments on the festival detail page. This would help users engage with other users and also to speak directly to the event owner who could also comment back to them.
+- Add Other Artists
+    - For the event owner to be able to add artists to the database that are not currently on there.
